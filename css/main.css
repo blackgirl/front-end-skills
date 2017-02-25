@@ -479,4 +479,40 @@ strong {
         margin: 5px 0; }
 
 .comments {
-  margin: 50px 0 0; }
+  margin: 50px 0 0; 
+}
+
+
+
+
+/* W3 Standarts Navigation */
+.w3-menu .icon {
+  display: block;
+  height: 44px; width: 44px;
+  position: absolute;
+  top: 9px; left: 20px;
+  background: #FFC0CB url(http://w3c.org.ru/wp-content/themes/w3c/2008/site/images/icon_sprite.png) no-repeat 0 0;
+}
+.w3-menu .w3_agents .icon {
+  background-position: -264px 0;
+}
+.w3-menu .w3_webofdevices .icon {
+  background-position: -220px 0;
+}
+.w3-menu .w3_webarch .icon {
+  background-position: -176px 0;
+}
+.w3-menu .w3_webdesign .icon {
+  background-position: -132px 0;
+}
+.w3-menu .w3_semanticweb .icon {
+  background-position: -88px 0;
+}
+.w3-menu .w3_webofservices .icon {
+  background-position: -44px 0;
+}
+.w3-menu .w3_xml .icon {
+  background-position: 0 0;
+}
+/* W3 Standarts Navigation */
+
