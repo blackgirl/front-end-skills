@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="https://habracdn.net/habr/styles/1487668914/_build/global_main.css">
 </head>
 <body>
+<div class="content wrapper">
+<article>
+<header class="article--header">
+  <h1 class="article--title">Руководство по HTML/CSS/JavaScript</h1>
+  <img src="https://habrastorage.org/files/5ad/d35/6fe/5add356fe9fe4db6a3d5e8eff84dff59.png" >
+</header>
 
-<article>    
-<h1>Руководство по HTML/CSS/JavaScript</h1>
 
-<img src="https://habrastorage.org/files/5ad/d35/6fe/5add356fe9fe4db6a3d5e8eff84dff59.png" align/ple
-
+<div class="text">
 <h4>Frontend Guidelines</h4>
 <p>Правила и руководства оформления, форматирования HTML, СSS и JavaScript кода. Его цель — повысить качество кода и облегчить совместную работу и поддержку инфраструктуры.</p>
 
@@ -900,7 +903,7 @@ union([<span class="hljs-string">"foo"</span>], [<span class="hljs-string">"bar"
 
 <b>К прочтению</b>:<br>
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=var%20_%20%3D%20require(%22underscore%22)%3B%0A_.compact(%5B%22foo%22%2C%200%5D)%3B%0A_.unique(%5B%22foo%22%2C%20%22foo%22%5D)%3B%0A_.union(%5B%22foo%22%5D%2C%20%5B%22bar%22%5D%2C%20%5B%22foo%22%5D)%3B">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20compact%20%3D%20arr%20%3D%3E%20arr.filter(el%20%3D%3E%20el)%3B%0Aconst%20unique%20%3D%20arr%20%3D%3E%20%5B...Set(arr)%5D%3B%0Aconst%20union%20%3D%20(...arr)%20%3D%3E%20unique(%5B%5D.concat(...arr))%3B%0A%0Acompact(%5B%22foo%22%2C%200%5D)%3B%0Aunique(%5B%22foo%22%2C%20%22foo%22%5D)%3B%0Aunion(%5B%22foo%22%5D%2C%20%5B%22bar%22%5D%2C%20%5B%22foo%22%5D)%3B">хорошо</a><br>
-2. <a href="https://habrahabr.ru/post/181536/">Путь JavaScript модуля</a> и документация по библиотеке <a href="http://underscorejs.ru/">Underscore</a>
-</article>
+2. <a href="https://habrahabr.ru/post/181536/">Путь JavaScript модуля</a> и документация по библиотеке <a href="http://underscorejs.ru/">Underscore</a></div>
+</article></div>
 </body>
 </html>
