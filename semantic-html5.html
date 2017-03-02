@@ -6,157 +6,141 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
+<div class="content wrapper">
 <article>
-	<h1>Семантический HTML5</h1>
-
-	<p>Концепция Semantic Web подразумевает использование своих стандартов (отличных от привычных HTML и CSS) для описания структуры и смысла ваших страниц. </p>
-	<p>Такие стандарты были разработаны всемирным консорциумом W3C – RDF, OWL, SparQL и т.д. </p>
-
-<blockquote><p>В контексте веба семантика означает «с помощью какого-либо способа сообщить поисковому роботу, какой смысл несет тот или иной информационный блок».</p></blockquote>
-<p>В соответствии с W3C, Semantic Web: «Позволяет делиться и обмениваться данными между Apps, организациями или сообществами.»</p>
-
-<!--  -->
-<h2> Что такое семантические элементы?</h2>
-
-<p>HTML5 предлагает новые семантические элементы для обозначения различных частей веб-страницы:</p>
-<ul>
-  <li>&lt;article&gt;</li>
-  <li>&lt;aside&gt;</li>
-  <li>&lt;details&gt;</li>
-  <li>&lt;figcaption&gt;</li>
-  <li>&lt;figure&gt;</li>
-  <li>&lt;footer&gt;</li>
-  <li>&lt;header&gt;</li>
-  <li>&lt;main&gt;</li>
-  <li>&lt;mark&gt;</li>
-  <li>&lt;nav&gt;</li>
-  <li>&lt;section&gt;</li>
-  <li>&lt;summary&gt;</li>
-  <li>&lt;time&gt;</li>
-</ul>
-<img alt="HTML5 Semantic Elements" src="https://www.w3schools.com/html/img_sem_elements.gif" width="219" height="258">
-
-<p>Обычно разработчики присваивают элементам «кастомные» имена id и class: header, top, bottom, footer, menu, navigation, main, container, content, article, sidebar, topnav и т.д.</p>
-
-<p>Семантический элемент ясно описывает его значение как для браузера и разработчика.<br>
-Примеры несемантических элементов: <div> и <span> - ничего нескажет о их содержимом. <br>
-Примеры семантических элементов: <form>, <table> и <article> - ясно «говорит» о содержимом.</p>
-
-<h2>Семантические элементы в HTML5</h2>
-
-<p>Ниже приведен алфавитный список новых смысловых элементов в HTML5.</p>
-<p>Ссылки идут на наш полный <a href="/tags/default.asp">HTML5 Reference</a>.</p>
-<table><tbody><tr>
-<th style="width:20%">Tag</th>
-<th>Description</th></tr><tr>
-<td><a href="/tags/tag_article.asp">&lt;article&gt;</a></td>
-<td>Defines an article</td></tr><tr>
-<td><a href="/tags/tag_aside.asp">&lt;aside&gt;</a></td>
-<td>Defines content aside from the page content</td></tr><tr>
-<td><a href="/tags/tag_details.asp">&lt;details&gt;</a></td>
-<td>Defines additional details that the user can view or hide</td></tr><tr>
-<td><a href="/tags/tag_figcaption.asp">&lt;figcaption&gt;</a></td>
-<td>Defines a caption for a &lt;figure&gt; element</td></tr><tr>
-<td><a href="/tags/tag_figure.asp">&lt;figure&gt;</a></td>
-<td>Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.</td></tr><tr>
-<td><a href="/tags/tag_footer.asp">&lt;footer&gt;</a></td>
-<td>Defines a footer for a document or section</td></tr><tr>
-<td><a href="/tags/tag_header.asp">&lt;header&gt;</a></td>
-<td>Specifies a header for a document or section</td></tr><tr>
-<td><a href="/tags/tag_main.asp">&lt;main&gt;</a></td>
-<td>Specifies the main content of a document</td></tr><tr>
-<td><a href="/tags/tag_mark.asp">&lt;mark&gt;</a></td>
-<td>Defines marked/highlighted text</td></tr><tr>
-<td><a href="/tags/tag_nav.asp">&lt;nav&gt;</a></td>
-<td>Defines navigation links</td></tr><tr>
-<td><a href="/tags/tag_section.asp">&lt;section&gt;</a></td>
-<td>Defines a section in a document</td></tr><tr>
-<td><a href="/tags/tag_summary.asp">&lt;summary&gt;</a></td>
-<td>Defines a visible heading for a &lt;details&gt; element</td></tr><tr>
-<td><a href="/tags/tag_time.asp">&lt;time&gt;</a></td>
-<td>Defines a date/time</td></tr></tbody></table>
-
-<blockquote><p><strong>Важное замечание по использованию HTML5 тегов.</strong>
-В спецификации не указаны жесткие правила по использованию семантических тегов, указаны лишь рекомендации пo их использованию. <br>
-Если вы не понимаете или не знаете где и какой HTML5 тег использовать, лучше используйте <strong>div</strong> — чтобы не навредить и не нарушить структуру документа.</p></blockquote>
-
-<!-- MICROFORMAT -->
-
-	<h2>Микроформаты</h2>
-	<p>Еще одним способом рассказать поисковым системам о себе является использование микроформатов (разработка все тех же W3C). </p>
-	<p><strong>Микроформаты</strong> – это рекомендации как верстать свои сайты и подразумевают использование специальных понятных имен CSS классов и идентификаторов.</p>
-
-<blockquote><p>Очень многие сайты начали внедрять API для доступа к своим данным не только в виде HTML, но и RDF, XML, JSON, что упрощает жизнь поисковым системам.</p>
-<p>В свою очередь, многие поисковые системы получили звание «семантических» - начиная от Yahoo!, заканчивая Google и Bing, так как они научились искать по ресурсам с RDF разметкой.</p></blockquote>
-
-	<p>Предположим, что имеется контейнер с уже размеченной информацией о человеке:</p>
-	<div><div id="highlighter_999134" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">&lt;div&gt;</code></div><div class="line number2 index1 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div&gt;Василий Пупкин&lt;/div&gt;</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div&gt;Рога и Копыта&lt;/div&gt;</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div&gt;495-564-1234&lt;/div&gt;</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;a href=</code><code class="csharp string">"<a href="http://example.com/">http://example.com/</a>"</code><code class="csharp plain">&gt;Мой сайт&lt;/a&gt;</code></div><div class="line number6 index5 alt1"><code class="csharp plain">&lt;/div&gt;</code></div></div></td></tr></tbody></table></div></div>
-
-	<p>С помощью микроформата hCard можно добавить семантическую значимость этому блоку кода:</p>
-
-	<div><div id="highlighter_779124" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"vcard"</code><code class="csharp plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"fn"</code><code class="csharp plain">&gt;Василий Пупкин&lt;/div&gt;</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"org"</code><code class="csharp plain">&gt;Рога и Копыта&lt;/div&gt;</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"tel"</code><code class="csharp plain">&gt;495-564-1234&lt;/div&gt;</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;a </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"url"</code> <code class="csharp plain">href=</code><code class="csharp string">"<a href="http://example.com/">http://example.com/</a>"</code><code class="csharp plain">&gt;Мой сайт&lt;/a&gt;</code></div><div class="line number6 index5 alt1"><code class="csharp plain">&lt;/div&gt;</code></div></div></td></tr></tbody></table></div></div>
-
-	<p>Для человека, который читает веб-страницу, ровным счетом ничего не изменилось, но поисковая система найдет класс vcard и поймет, что речь идет о персональных данных Василия.</p>
-	<p>Каждый микроформат решает определённую, отдельную задачу. Вот наиболее известные из них:</p>
+<header class="article--header">
+	<h1 class="article--title">Семантический HTML5</h1>
+</header>
+	<div class="text">
+		<p>Концепция Semantic Web подразумевает использование своих стандартов (отличных от привычных HTML и CSS) для описания структуры и смысла ваших страниц. </p>
+		<p>Такие стандарты были разработаны всемирным консорциумом W3C – RDF, OWL, SparQL и т.д. </p>
+	
+	<blockquote><p>В контексте веба семантика означает «с помощью какого-либо способа сообщить поисковому роботу, какой смысл несет тот или иной информационный блок».</p></blockquote>
+	<p>В соответствии с W3C, Semantic Web: «Позволяет делиться и обмениваться данными между Apps, организациями или сообществами.»</p>
+	
+	<!--  -->
+	<h2>Что такое семантические элементы?</h2>
+	
+	<p>HTML5 предлагает новые семантические элементы для обозначения различных частей веб-страницы:</p>
 	<ul>
-	<li>hCard — организации и люди;</li>
-	<li>hCalendar — события;</li>
-	<li>hAtom — ленты новостей (как аналог RSS и Atom) в обычном HTML или XHTML;</li>
-	<li>XFN — социальные взаимоотношения;</li>
-	<li>rel-tag — метки (теги) и образование фолксономии;</li>
-	<li>xFolk — помеченные ссылки;</li>
-	<li>adr — почтовые адреса;</li>
-	<li>geo — географические координаты (широта и долгота);</li>
-	<li>hReview — отзывы (о товарах, услугах, событиях и тому подобном);</li>
-	<li>hProduct — товары;</li>
-	<li>nofollow — для предотвращения индексации поисковыми системами определённых документов;</li>
-	<li>hRecipe — кулинарные рецепты приготовления блюд.</li>
+	  <li>&lt;article&gt;</li>
+	  <li>&lt;aside&gt;</li>
+	  <li>&lt;details&gt;</li>
+	  <li>&lt;figcaption&gt;</li>
+	  <li>&lt;figure&gt;</li>
+	  <li>&lt;footer&gt;</li>
+	  <li>&lt;header&gt;</li>
+	  <li>&lt;main&gt;</li>
+	  <li>&lt;mark&gt;</li>
+	  <li>&lt;nav&gt;</li>
+	  <li>&lt;section&gt;</li>
+	  <li>&lt;summary&gt;</li>
+	  <li>&lt;time&gt;</li>
 	</ul>
-	  
-	<p>Вот шпаргалка по всем микроформатам:</p>
-	<img src="https://zhilinsky.ru/wp-content/uploads/sheets/microformats_cheat_sheet.png" alt="" title="">
+	<img alt="HTML5 Semantic Elements" src="https://www.w3schools.com/html/img_sem_elements.gif" width="219" height="258">
+	
+	<p>Обычно разработчики присваивают элементам «кастомные» имена id и class: header, top, bottom, footer, menu, navigation, main, container, content, article, sidebar, topnav и т.д.</p>
+	
+	<p>Семантический элемент ясно описывает его значение как для браузера и разработчика.<br>
+	Примеры несемантических элементов: <div> и <span> - ничего нескажет о их содержимом. <br>
+	Примеры семантических элементов: <form>, <table> и <article> - ясно «говорит» о содержимом.</p>
+	
+	<h2>Семантические элементы в HTML5</h2>
+	
+	<p>Ниже приведен алфавитный список новых смысловых элементов в HTML5.</p>
+	<p>Ссылки идут на наш полный <a href="/tags/default.asp">HTML5 Reference</a>.</p>
+	<table><tbody><tr>
+	<th style="width:20%">Tag</th>
+	<th>Description</th></tr><tr>
+	<td><a href="/tags/tag_article.asp">&lt;article&gt;</a></td>
+	<td>Defines an article</td></tr><tr>
+	<td><a href="/tags/tag_aside.asp">&lt;aside&gt;</a></td>
+	<td>Defines content aside from the page content</td></tr><tr>
+	<td><a href="/tags/tag_details.asp">&lt;details&gt;</a></td>
+	<td>Defines additional details that the user can view or hide</td></tr><tr>
+	<td><a href="/tags/tag_figcaption.asp">&lt;figcaption&gt;</a></td>
+	<td>Defines a caption for a &lt;figure&gt; element</td></tr><tr>
+	<td><a href="/tags/tag_figure.asp">&lt;figure&gt;</a></td>
+	<td>Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.</td></tr><tr>
+	<td><a href="/tags/tag_footer.asp">&lt;footer&gt;</a></td>
+	<td>Defines a footer for a document or section</td></tr><tr>
+	<td><a href="/tags/tag_header.asp">&lt;header&gt;</a></td>
+	<td>Specifies a header for a document or section</td></tr><tr>
+	<td><a href="/tags/tag_main.asp">&lt;main&gt;</a></td>
+	<td>Specifies the main content of a document</td></tr><tr>
+	<td><a href="/tags/tag_mark.asp">&lt;mark&gt;</a></td>
+	<td>Defines marked/highlighted text</td></tr><tr>
+	<td><a href="/tags/tag_nav.asp">&lt;nav&gt;</a></td>
+	<td>Defines navigation links</td></tr><tr>
+	<td><a href="/tags/tag_section.asp">&lt;section&gt;</a></td>
+	<td>Defines a section in a document</td></tr><tr>
+	<td><a href="/tags/tag_summary.asp">&lt;summary&gt;</a></td>
+	<td>Defines a visible heading for a &lt;details&gt; element</td></tr><tr>
+	<td><a href="/tags/tag_time.asp">&lt;time&gt;</a></td>
+	<td>Defines a date/time</td></tr></tbody></table>
+	
+	<blockquote><p><strong>Важное замечание по использованию HTML5 тегов.</strong>
+	В спецификации не указаны жесткие правила по использованию семантических тегов, указаны лишь рекомендации пo их использованию. <br>
+	Если вы не понимаете или не знаете где и какой HTML5 тег использовать, лучше используйте <strong>div</strong> — чтобы не навредить и не нарушить структуру документа.</p></blockquote>
+	
+	<!-- MICROFORMAT -->
+	
+		<h2>Микроформаты</h2>
+		<p>Еще одним способом рассказать поисковым системам о себе является использование микроформатов (разработка все тех же W3C). </p>
+		<p><strong>Микроформаты</strong> – это рекомендации как верстать свои сайты и подразумевают использование специальных понятных имен CSS классов и идентификаторов.</p>
+	
+	<blockquote><p>Очень многие сайты начали внедрять API для доступа к своим данным не только в виде HTML, но и RDF, XML, JSON, что упрощает жизнь поисковым системам.</p>
+	<p>В свою очередь, многие поисковые системы получили звание «семантических» - начиная от Yahoo!, заканчивая Google и Bing, так как они научились искать по ресурсам с RDF разметкой.</p></blockquote>
+	
+		<p>Предположим, что имеется контейнер с уже размеченной информацией о человеке:</p>
+		<div><div id="highlighter_999134" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">&lt;div&gt;</code></div><div class="line number2 index1 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div&gt;Василий Пупкин&lt;/div&gt;</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div&gt;Рога и Копыта&lt;/div&gt;</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div&gt;495-564-1234&lt;/div&gt;</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;a href=</code><code class="csharp string">"<a href="http://example.com/">http://example.com/</a>"</code><code class="csharp plain">&gt;Мой сайт&lt;/a&gt;</code></div><div class="line number6 index5 alt1"><code class="csharp plain">&lt;/div&gt;</code></div></div></td></tr></tbody></table></div></div>
+	
+		<p>С помощью микроформата hCard можно добавить семантическую значимость этому блоку кода:</p>
+	
+		<div><div id="highlighter_779124" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"vcard"</code><code class="csharp plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"fn"</code><code class="csharp plain">&gt;Василий Пупкин&lt;/div&gt;</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"org"</code><code class="csharp plain">&gt;Рога и Копыта&lt;/div&gt;</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"tel"</code><code class="csharp plain">&gt;495-564-1234&lt;/div&gt;</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;a </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"url"</code> <code class="csharp plain">href=</code><code class="csharp string">"<a href="http://example.com/">http://example.com/</a>"</code><code class="csharp plain">&gt;Мой сайт&lt;/a&gt;</code></div><div class="line number6 index5 alt1"><code class="csharp plain">&lt;/div&gt;</code></div></div></td></tr></tbody></table></div></div>
+	
+		<p>Для человека, который читает веб-страницу, ровным счетом ничего не изменилось, но поисковая система найдет класс vcard и поймет, что речь идет о персональных данных Василия.</p>
+		<p>Каждый микроформат решает определённую, отдельную задачу. Вот наиболее известные из них:</p>
+		<ul>
+		<li>hCard — организации и люди;</li>
+		<li>hCalendar — события;</li>
+		<li>hAtom — ленты новостей (как аналог RSS и Atom) в обычном HTML или XHTML;</li>
+		<li>XFN — социальные взаимоотношения;</li>
+		<li>rel-tag — метки (теги) и образование фолксономии;</li>
+		<li>xFolk — помеченные ссылки;</li>
+		<li>adr — почтовые адреса;</li>
+		<li>geo — географические координаты (широта и долгота);</li>
+		<li>hReview — отзывы (о товарах, услугах, событиях и тому подобном);</li>
+		<li>hProduct — товары;</li>
+		<li>nofollow — для предотвращения индексации поисковыми системами определённых документов;</li>
+		<li>hRecipe — кулинарные рецепты приготовления блюд.</li>
+		</ul>
+		  
+		<p>Вот шпаргалка по всем микроформатам:</p>
+		<img src="https://zhilinsky.ru/wp-content/uploads/sheets/microformats_cheat_sheet.png" alt="" title="">
+	
+		<h2>Семантические теги в HTML5</h2>
+	
+		<p>Типовая разметка HTML:</p>
+		<div><div id="highlighter_125088" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">&lt;body&gt;</code></div><div class="line number2 index1 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"nav_bar"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"main_header"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"side_bar"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"container"</code><code class="csharp plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"section"</code><code class="csharp plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"header"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number8 index7 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;p&gt;Some Text&lt;/p&gt;</code></div><div class="line number9 index8 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"footer"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number10 index9 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/div&gt;</code></div><div class="line number11 index10 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"section"</code><code class="csharp plain">&gt;</code></div><div class="line number12 index11 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"header"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number13 index12 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;p&gt;Some Text&lt;/p&gt;</code></div><div class="line number14 index13 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"footer"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number15 index14 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/div&gt;</code></div><div class="line number16 index15 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/div&gt;</code></div><div class="line number17 index16 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"main_footer"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number18 index17 alt1"><code class="csharp plain">&lt;/body&gt;</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="csharp preprocessor">#nav_bar {}</code></div><div class="line number21 index20 alt2"><code class="csharp preprocessor">#main_header {}</code></div><div class="line number22 index21 alt1"><code class="csharp plain">.side_bar {}</code></div><div class="line number23 index22 alt2"><code class="csharp preprocessor">#container {}</code></div><div class="line number24 index23 alt1"><code class="csharp plain">.section {}</code></div><div class="line number25 index24 alt2"><code class="csharp preprocessor">#header {}</code></div><div class="line number26 index25 alt1"><code class="csharp plain">.section p {}</code></div><div class="line number27 index26 alt2"><code class="csharp plain">.footer {}</code></div><div class="line number28 index27 alt1"><code class="csharp preprocessor">#main_footer</code></div></div></td></tr></tbody></table></div></div>
+	
+		<p>Разметка HTML5:</p>
+		<div><div id="highlighter_119396" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">&lt;body&gt;</code></div><div class="line number2 index1 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;nav&gt;&lt;/nav&gt;</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;header&gt;&lt;/header&gt;</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;aside&gt;&lt;/aside&gt;</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"container"</code><code class="csharp plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;section&gt;</code></div><div class="line number7 index6 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;header&gt;&lt;/header&gt;</code></div><div class="line number8 index7 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;p&gt;Some Text&lt;/p&gt;</code></div><div class="line number9 index8 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;footer&gt;&lt;/footer&gt;</code></div><div class="line number10 index9 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/section&gt;</code></div><div class="line number11 index10 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;section&gt;</code></div><div class="line number12 index11 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;header&gt;&lt;/header&gt;</code></div><div class="line number13 index12 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;p&gt;Some Text&lt;/p&gt;</code></div><div class="line number14 index13 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;footer&gt;&lt;/footer&gt;</code></div><div class="line number15 index14 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/section&gt;</code></div><div class="line number16 index15 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/div&gt;</code></div><div class="line number17 index16 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;footer&gt;&lt;/footer&gt;</code></div><div class="line number18 index17 alt1"><code class="csharp plain">&lt;/body&gt;</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="csharp plain">nav {}</code></div><div class="line number21 index20 alt2"><code class="csharp plain">header {}</code></div><div class="line number22 index21 alt1"><code class="csharp plain">aside {}</code></div><div class="line number23 index22 alt2"><code class="csharp plain">section {}</code></div><div class="line number24 index23 alt1"><code class="csharp plain">footer {}</code></div><div class="line number25 index24 alt2"><code class="csharp plain">section p {}</code></div><div class="line number26 index25 alt1"><code class="csharp preprocessor">#container {}</code></div><div class="line number27 index26 alt2"><code class="csharp preprocessor">#container header {}</code></div><div class="line number28 index27 alt1"><code class="csharp preprocessor">#container footer {}</code></div></div></td></tr></tbody></table></div></div>
+	<p>Существует много генераторов HTML5 (<a href="http://switchtohtml5.com/">SwitchToHTML5</a>, <a href="http://shikiryu.com/html5/">Shikiryu generator</a> и т.д.). А если предпочитаете готовые шаблоны, то <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> — must have.</p>
 
-	<h2>Семантические теги в HTML5</h2>
-
-	<p>Типовая разметка HTML:</p>
-	<div><div id="highlighter_125088" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">&lt;body&gt;</code></div><div class="line number2 index1 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"nav_bar"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"main_header"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"side_bar"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"container"</code><code class="csharp plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"section"</code><code class="csharp plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"header"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number8 index7 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;p&gt;Some Text&lt;/p&gt;</code></div><div class="line number9 index8 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"footer"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number10 index9 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/div&gt;</code></div><div class="line number11 index10 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"section"</code><code class="csharp plain">&gt;</code></div><div class="line number12 index11 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"header"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number13 index12 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;p&gt;Some Text&lt;/p&gt;</code></div><div class="line number14 index13 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div </code><code class="csharp keyword">class</code><code class="csharp plain">=</code><code class="csharp string">"footer"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number15 index14 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/div&gt;</code></div><div class="line number16 index15 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/div&gt;</code></div><div class="line number17 index16 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"main_footer"</code><code class="csharp plain">&gt;&lt;/div&gt;</code></div><div class="line number18 index17 alt1"><code class="csharp plain">&lt;/body&gt;</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="csharp preprocessor">#nav_bar {}</code></div><div class="line number21 index20 alt2"><code class="csharp preprocessor">#main_header {}</code></div><div class="line number22 index21 alt1"><code class="csharp plain">.side_bar {}</code></div><div class="line number23 index22 alt2"><code class="csharp preprocessor">#container {}</code></div><div class="line number24 index23 alt1"><code class="csharp plain">.section {}</code></div><div class="line number25 index24 alt2"><code class="csharp preprocessor">#header {}</code></div><div class="line number26 index25 alt1"><code class="csharp plain">.section p {}</code></div><div class="line number27 index26 alt2"><code class="csharp plain">.footer {}</code></div><div class="line number28 index27 alt1"><code class="csharp preprocessor">#main_footer</code></div></div></td></tr></tbody></table></div></div>
-
-	<p>Разметка HTML5:</p>
-	<div><div id="highlighter_119396" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">&lt;body&gt;</code></div><div class="line number2 index1 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;nav&gt;&lt;/nav&gt;</code></div><div class="line number3 index2 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;header&gt;&lt;/header&gt;</code></div><div class="line number4 index3 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;aside&gt;&lt;/aside&gt;</code></div><div class="line number5 index4 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;div id=</code><code class="csharp string">"container"</code><code class="csharp plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;section&gt;</code></div><div class="line number7 index6 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;header&gt;&lt;/header&gt;</code></div><div class="line number8 index7 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;p&gt;Some Text&lt;/p&gt;</code></div><div class="line number9 index8 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;footer&gt;&lt;/footer&gt;</code></div><div class="line number10 index9 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/section&gt;</code></div><div class="line number11 index10 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;section&gt;</code></div><div class="line number12 index11 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;header&gt;&lt;/header&gt;</code></div><div class="line number13 index12 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;p&gt;Some Text&lt;/p&gt;</code></div><div class="line number14 index13 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;footer&gt;&lt;/footer&gt;</code></div><div class="line number15 index14 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/section&gt;</code></div><div class="line number16 index15 alt1"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;/div&gt;</code></div><div class="line number17 index16 alt2"><code class="csharp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">&lt;footer&gt;&lt;/footer&gt;</code></div><div class="line number18 index17 alt1"><code class="csharp plain">&lt;/body&gt;</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="csharp plain">nav {}</code></div><div class="line number21 index20 alt2"><code class="csharp plain">header {}</code></div><div class="line number22 index21 alt1"><code class="csharp plain">aside {}</code></div><div class="line number23 index22 alt2"><code class="csharp plain">section {}</code></div><div class="line number24 index23 alt1"><code class="csharp plain">footer {}</code></div><div class="line number25 index24 alt2"><code class="csharp plain">section p {}</code></div><div class="line number26 index25 alt1"><code class="csharp preprocessor">#container {}</code></div><div class="line number27 index26 alt2"><code class="csharp preprocessor">#container header {}</code></div><div class="line number28 index27 alt1"><code class="csharp preprocessor">#container footer {}</code></div></div></td></tr></tbody></table></div></div>
-
+	<p>После кодирования веб страницу в HTML5, самый быстрый и наиболее эффективный способ, чтобы убедиться, что ваш код семантически корректный, действительно, проверив его. </p>
+	<p>Старый добрый <a href="http://validator.w3.org/">W3C валидатор</a> может проверить страницы HTML5 и показать вам если вы допустили какую-либо ошибку. Отличный инструмент для проверки качества!</p>
+</div>
 </article>
 
 <!--  -->
-
-<p>Существует много генераторов HTML5 (<a href="http://switchtohtml5.com/">SwitchToHTML5</a>, <a href="http://shikiryu.com/html5/">Shikiryu generator</a> и т.д.). А если предпочитаете готовые шаблоны, то <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> — must have.</p>
-
-<p>После кодирования веб страницу в HTML5, самый быстрый и наиболее эффективный способ, чтобы убедиться, что ваш код семантически корректный, действительно, проверив его. </p>
-<p>Старый добрый <a href="http://validator.w3.org/">W3C валидатор</a> может проверить страницы HTML5 и показать вам если вы допустили какую-либо ошибку. Отличный инструмент для проверки качества!</p>
-
-<!-- Sheet Cheet -->
-<h2>Шпаргалки (Cheat Sheets)</h2>
-
-<p><img src="https://www.catswhocode.com/blog/wp-content/uploads/2012/06/html5_cheat_sheet_tags.png" alt="">
-<small>&#169 created by InMotion Hosting</small></p>
-<p><img src="https://css-live.ru/wp-content/uploads/2012/07/html5-flowchart-ru.png" alt="">Блок-схема алгоритма выбора структурных (секционных) элементов HTML5</p>
-<p><img src="" alt=""></p>
-
-<ul><li><a title="CSS Shorthand Guide" href="http://www.dustindiaz.com/css-shorthand/" target="_blank">Короткий гайд по CSS</a></li>
-<li><a title=".htaccess Cheat Sheet" href="http://www.thejackol.com/htaccess-cheatsheet/" target="_blank">.htaccess</a></li>
-<li><a title="HTML Cheat Sheet" href="http://www.angelfire.com/nm/thehtmlsource/html/cheatsheet.html" target="_blank">HTML</a></li>
-<li><a title="HTML Dom Quick reference Card" href="http://refcards.com/download/bj/DOMHtml-2.pdf" class="broken_link" target="_blank">HTML DOM</a>&nbsp;(PDF)</li>
-<li><a title="JQuery Cheat Sheet" href="http://www.define-web.com/jquery_cheat_sheet/jquery_cheat_sheet_080306_v1.pdf" target="_blank">JQuery</a>&nbsp;(PDF)</li>
-<li><a title="JQuery Reference" href="http://www.define-web.com/jquery_cheat_sheet/jquery_cheat_sheet_080306_v1_pg2.pdf" target="_blank">JQuery</a>&nbsp;(вторая страница)&nbsp;(PDF)</li>
-<li><a title="XHTML &amp; HTML Cheat Sheet" href="http://www.petefreitag.com/cheatsheets/xhtml/" target="_blank">XHTML &amp; HTML</a></li></ul>
-
-
-<!--  -->
-<h1>Статьи и материалы по теме:</h1>
-
+<article>
+<header class="article--header">
+	<h1 class="article--title">Статьи и материалы по теме:</h1>
+</header>
+<div class="text">
 <ul>
 <li><a href="https://tproger.ru/articles/10-layout-tips/">10 типичных ошибок верстальщиков-новичков и советы по их устранению.</a></li>
-
 <li><a href="http://html5forwebdesigners.com/semantics/"target="_blank">http://html5forwebdesigners.com</a></li> 
 <li><a href="http://habrahabr.ru/post/214407/"target="_blank">http://habrahabr.ru</a></li> 
 <li><a href="http://www.adobe.com/devnet/archive/dreamweaver/articles/understanding-html5-semantics.html"target="_blank">http://www.adobe.com</a></li> 
@@ -164,32 +148,35 @@
 <li><a href="http://blogs.msdn.com/b/jennifer/archive/2011/08/01/html5-part-1-semantic-markup-and-page-layout.aspx"target="_blank">http://blogs.msdn.com</a></li>
 <li><a href="http://www.w3schools.com/html/html5_semantic_elements.asp">http://www.w3schools.com</a></li>
 
-<!-- VIDEO -->
+<!-- Sheet Cheet -->
+<h2>Шпаргалки (Cheat Sheets)</h2>
+<ul><li><a title="CSS Shorthand Guide" href="http://www.dustindiaz.com/css-shorthand/" target="_blank">Короткий гайд по CSS</a></li>
+<li><a title=".htaccess Cheat Sheet" href="http://www.thejackol.com/htaccess-cheatsheet/" target="_blank">.htaccess</a></li>
+<li><a title="HTML Cheat Sheet" href="http://www.angelfire.com/nm/thehtmlsource/html/cheatsheet.html" target="_blank">HTML</a></li>
+<li><a title="HTML Dom Quick reference Card" href="http://refcards.com/download/bj/DOMHtml-2.pdf" class="broken_link" target="_blank">HTML DOM</a>&nbsp;(PDF)</li>
+<li><a title="JQuery Cheat Sheet" href="http://www.define-web.com/jquery_cheat_sheet/jquery_cheat_sheet_080306_v1.pdf" target="_blank">JQuery</a>&nbsp;(PDF)</li>
+<li><a title="JQuery Reference" href="http://www.define-web.com/jquery_cheat_sheet/jquery_cheat_sheet_080306_v1_pg2.pdf" target="_blank">JQuery</a>&nbsp;(вторая страница)&nbsp;(PDF)</li>
+<li><a title="XHTML &amp; HTML Cheat Sheet" href="http://www.petefreitag.com/cheatsheets/xhtml/" target="_blank">XHTML &amp; HTML</a></li></ul>
+<li><a href="https://www.catswhocode.com/blog/wp-content/uploads/2012/06/html5_cheat_sheet_tags.png" target="_blank">
+Теги HTML5</a></li>
+<li><a href="https://css-live.ru/wp-content/uploads/2012/07/html5-flowchart-ru.png" target="_blank">Блок-схема алгоритма выбора структурных (секционных) элементов HTML5</a></li>
 
+<!-- VIDEO -->
 <li><a href="http://usemind.org/1023" target="_blank">Bидео курс «HTML5 структура, синтаксис и семантика» &#169 Lynda.com</a></li>
 <li><a href="https://vimeo.com/25823931" target="_blank">Видео доклада Вадима Макеева «Вёрстка со смыслом. Новая семантика HTML5» &#169 «РИТ 2011»</a><br>
 <a href="https://pepelsbey.net/pres/sense-coding/">Слайды доклада Вадима Макеева «Вёрстка со смыслом. Новая семантика HTML5» &#169 «РИТ 2011»</a></li>
-
-<li><a href="" target="_blank"></a></li>
-<li><a href="" target="_blank"></a></li>
-<li><a href="" target="_blank"></a></li>
-<li><a href="" target="_blank"></a></li>
-<li><a href="" target="_blank"></a></li>
-<li><a href="" target="_blank"></a></li>
 
 <!-- DOCS & SPEC -->
 <li><a href="https://ru.bem.info/">https://ru.bem.info/</a><br>
 <small><strong>БЭМ (Блок, Элемент, Модификатор)</strong> — компонентный подход к веб-разработке, в основе которого лежит принцип разделения интерфейса на независимые блоки.</small><br>
 <a href="https://ru.bem.info/methodology/quick-start/">БЭМ. Быстрый старт</a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
 <li><a href="http://www.w3.org/Style/CSS/current-work" target="_blank">CSS3 Spec status</a><br>
 <small>Список текущего статуса спецификаций CSS3.</small></li>
 <li><a href="http://www.w3.org/TR/css3-selectors/" target="_blank">W3C Spec: CSS3 Selectors</a><br>
 <small>В этой спецификации W3C определяются новые селекторы, доступные<br> разработчикам.</small></li>
+</ul></div>
+</article>
 
-</ul>
+</div>
 </body>
 </html>
