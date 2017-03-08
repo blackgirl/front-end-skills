@@ -1026,14 +1026,41 @@
 </div>
 </article>
 
-<!-- article>(header>h1)+div.text -->
-<!-- article>(header>h1)+div.text -->
-<!-- article>(header>h1)+div.text -->
-<!-- article>(header>h1)+div.text -->
-<!-- article>(header>h1)+div.text -->
-<!-- article>(header>h1)+div.text -->
-<!-- article>(header>h1)+div.text -->
-<!-- article>(header>h1)+div.text -->
+<article>
+	<div class="text">
+	<header class="article--header">
+		<h1 class="article--title">Hачать использовать Sass из командной строки</h1>
+	</header>
+	<h2 id="linux">Linux</h2>
+	<p>Если Вы используете операционную систему Linux, то в первую очередь Вам необходимо установить Ruby. Установить Ruby можно через пакетные менеджеры apt, rbenv или rvm.</p>
+	<figure class="highlight"><pre><code>sudo su -c "gem install sass"</figure></pre></sode>
+	<h2 id="windows">Windows</h2>
+	<p>Перед тем, как начать пользоваться Sass Вам необходимо установить Ruby.</p>
+	<p>Самый быстрый способ установить Ruby на Windows — это использовать <a href="http://rubyinstaller.org">установщик Ruby</a>. Эта установка в один клик поможет Вам приступить к работе практически мгновенно.</p>
+	<p>Установщик также установит командую строку Ruby — приложение, которое позволит использовать все библиотеки Ruby.</p>
+	<h2 id="mac">Mac</h2>
+	<p>Если вы предпочитаете командную строку нежели приложения, то настройка Sass для работы занимает считанные минуты. Так как Sass зависим от Ruby, а Вы пользователь Mac, поздравляем, Ruby уже предустановлен по-умолчанию.</p>
+	<h2 id="installsass">Установка Sass</h2>
+	<p>Это самый быстрый способ, чтобы начать использовать Sass с помощью командной строки:</p>
+	<ol><li><p><strong>Откройте терминал или командную строку.</strong> На Mac Terminal.app установлен по умолчанию и находится в папке «Программы». В Windows запустите команду `cmd`.</p></li>
+	<li><p><strong>Установка Sass.</strong> Ruby использует gem для управления различными пакетами такими как Sass. В открытом терминале наберите команду:</p>
+	<figure class="highlight"><pre><code>gem install sass</figure></pre></sode>
+	<p>Таким способом можно установить Sass и любые другие пакеты. Это просто магия =). Если у Вас отображается ошибка, в которой говорится
+	о том, что нужно использовать команду <code>sudo</code> для установки
+	пакета Sass, то введите в терминале:</p>
+	<figure class="highlight"><pre><code>sudo gem install sass</figure></pre></sode></li>
+	<li><p><strong>Наличие пакета.</strong> Теперь у Вас должен быть
+	установлен пакет Sass, но если хотите Вы можете проверить это.
+	В терминале наберите команду:</p>
+	<figure class="highlight"><pre><code>sass -v</figure></pre></sode>
+	<p>В ответ вы должны получить <code>Sass 3.4.22 (Selective Steve)</code>. Поздравляем! Sass успешно установлен.</p>
+	</li></ol>
+	</div>
+	</article>
+<!-- article>div.text>(header.article--header>h1.article--title)+div.text -->
+<!-- article>div.text>(header.article--header>h1.article--title)+div.text -->
+<!-- article>div.text>(header.article--header>h1.article--title)+div.text -->
+
 <article id="literature">
 <header class="article--header">
 	<h1 class="article--title">Дополнительно:</h1>
