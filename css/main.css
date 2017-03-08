@@ -519,3 +519,26 @@ strong {
 }
 /* W3 Standarts Navigation */
 
+/* Sass */
+.highlight {
+    background-color: #444;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: #fff;
+    margin: 0 0 1.5rem;
+}
+.highlight span {
+    color: #7f9f7f;
+}
+code span {
+  color: #aaa !important;
+  font-weight: 200;
+  font-family: monospace, monospace;
+  font-size: 0.95em;
+}
+.note {
+    background-color: #eee;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+}
+/* Sass */

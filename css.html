@@ -1,18 +1,1038 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>CSS</title>
-	  <link rel="stylesheet" href="css/main.css">
+<meta charset="UTF-8">
+<title>Css / SCSS / Sass / Less</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<article id="about">
+<header class="article--header">
+	<h1 class="article--title">Sass / SCSS</h1>
+</header>
+<div class="text">
+	<h1 id="intro">Вступление</h1>
+	<p>Вот так <a href="http://sass-lang.com">Sass</a> описывает сам себя в своей <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">документации</a>:</p>
+	<blockquote><p>Sass — это расширение CSS, которое добавляет силу и элигантность к основному языку.</p></blockquote>
+	<p>Основая цель Sass — исправить в CSS недостатки. CSS, как мы все знаем, не самый лучший язык в мире . Являясь довольно простым для освоения, он может быстро стать запутанным, особенно на больших проектах.</p>
+	<p>Цель в том, чтобы не превратить CSS в полнофункциональный язык программирования; Sass хочет лишь помочь – там, где не справляется CSS. Поэтому начать использовать Sass – не сложнее, чем начать изучать CSS. Он просто добавляет дополнительные возможности поверх CSS.</p>
+	<h2 id="sass--scss">Sass или SCSS</h2>
+	<p>Существует довольно много путаницы относительно семантики имени <em>Sass</em>, и не зря: Sass означает как препроцессор, так и свой собственный синтаксис. Не очень удобно, не так ли?</p>
+	<p>Как видите, Sass первоначально описал синтаксис, определяющей характеристикой которого является его чувствительность к вложености. Вскоре в Sass решили сократить разрыв между Sass и CSS, обеспечивая дружественный для CSS синтаксис под названием <em>SCSS</em> или <em>Sassy CSS</em>. Девиз: “если это правильный CSS, то это правильный SCSS”.</p>
+	<p>С тех пор, Sass (препроцессор) предоставляет два различных синтаксиса: Sass (не все буквы заглавные, <a href="http://sassnotsass.com">пожалуйста</a>), также известный как <em>синтаксис с отступом,</em> и SCSS. Какой из них использовать, в значительной степени, зависит от вас, так как оба строго равны по возможностям. Это только вопрос эстетики.</p>
+	<p>Cинтаксис Sass опирается на отступы, чтобы избавиться от скобок, точки с запятой и других символов пунктуации, что приводит к более компактному и более короткому синтаксису. Между тем, SCSS легче учиться, так как это в основном крошечные дополнительные кусочки на вершине CSS.</p>
+	<p>Лично я предпочитаю SCSS вместо Sass, потому что он близок к CSS и более дружелюбен для большинства разработчиков. Поэтому я буду использовать SCSS в этом руководстве.</p>
+	<h2 id="otherprepro">Другие препроцессоры</h2>
+	<p>Sass — это препроцессор, коих много. Самый серьёзный соперник — это <a href="http://lesscss.org/">LESS</a>, основанный на Node.js, который стал весьма популярен благодаря CSS-фреймворку <a href="http://getbootstrap.com/">Bootstrap</a>. Также есть <a href="http://learnboost.github.io/stylus/">Stylus</a>, который позволяет делать очень многое, так как почти превращает CSS в язык программирования.</p>
+	<p><em>Почему стоит выбрать Sass, а не другой препроцессор?</em> Действительно, актуальный вопрос. Не так давно мы рекомендовали использовать Sass для проектов на Ruby, потому что Sass был создан в Ruby и хорошо работает с Ruby On Rails. Теперь, когда LibSass догнал (в основном) оригинальный Sass, это уже не актуальный совет.</p>
+	<p>То, что мне нравится в Sass, так это его консервативный подход к CSS. Дизайн Sass основан на строгих принципах: большая часть проектного подхода приходит из мнений команды, о том что: <br>
+	а) добавление новых возможностей не должно вносить существенного усложнения, но быть адекватно полезным;<br>
+	б) должно быть достаточно беглого взгляда на блок стилей, чтобы понять, что он делает. Кроме того, Sass имеет гораздо более чёткое внимание к деталям, чем другие препроцессоры.</p>
+	<p>Другими словами, Sass – не препроцессор, который направлен на удовлетворение гиковатых программистов, вроде меня, добавляя в язык возможности, которые не предназначены для поддержки любых логических сценариев использования. Это программное обеспечение, направленое на решение актуальных вопросов; оно добавляет полезную функциональность CSS, которой у CSS просто нет.</p>
+	<p>Кроме препроцессоров, стоит также упомянуть постпроцессоры, которые получили значительное внимание в течение последних нескольких месяцев, главным образом благодаря <a href="https://github.com/postcss/postcss">PostCSS</a> и <a href="HTTPS://cssnext.github.io/">cssnext</a>. Постпроцессоры во многом довольно похожи на препроцессоры, но они не дают иных возможностей, кроме расширения синтаксиса CSS.</p>
+	<p>Вы можете думать о постпроцессорах как о полифилах для неподдерживаемых возможностей CSS. Например, можно было бы написать переменные, как они описаны в <a href="http://dev.w3.org/csswg/css-variables/">спецификации CSS</a>, затем скомпилировать таблицы стилей с постпроцессором – только, чтобы найти каждую переменную и заменить на соотвествующее значение, как Sass и сделал бы.</p>
+	<p>Идея постпроцессоров в том, что как только браузеры начнут поддерживают новые возможности (например, переменные CSS), постпроцессоры не будут компилировать их, передавая эту задачу браузерам.</p>
+	<p>Предоставление синтаксиса завтрашнего дня является благородной идеей; должен сказать, что я по-прежнему предпочитаю использовать Sass для большинства задач. Тем не менее, в некоторых случаях я считаю, что постпроцессоры подходят больше, чем Sass – например, для вендорных префиксов CSS – но мы к этому ещё вернёмся.</p>
+</div>
+</article>
+
+<article id="writing">
+	<header class="article--header">
+		<h1 class="article--title" id="naming">Соглашения по именованию</h1>
+</header>
+<div class="text">
+	<p>Рекомендую пользоваться соглашениями по именованию в CSS для сопровождения и масштабирования, что рекомендованы в <a href="http://cssguidelin.es/#naming-conventions">CSS Guidelines</a>.</p>
+	<p>Есть несколько вещей, которым вы можете дать имена в Sass, и очень важно, чтобы названия были хорошими, чтобы весь код выглядел последовательным и легко читался:</p>
+	<ul><li>переменные;</li>
+	<li>функции;</li>
+	<li>примеси.</li></ul>
+	<p>Sass placeholder (<code>%placeholder</code>) намеренно исключены из этого списка, так как они могут быть рассмотрены как обычные селекторы CSS и использовать теже принципы именования, что и классы.</p>
+	<p>Что же касается переменных, функций и примесей, то мы будем придерживаться чего-то очень <em>CSS-ного</em>: <strong>нижние подчеркивания и дефисы</strong>, и, прежде всего – смысл.</p>
+	<figure class="highlight"><pre><code data-lang="scss">
+	<span>$vertical-rhythm-baseline</span><span:</span> <span1</span><span>.5rem</span><span;</span><span@mixin</span> <span>size</span><span(</span><span>$width</span><span,</span> <span>$height</span><span:</span> <span>$width</span><span)</span> <span{</span>
+	<span>// …</span><span}</span><span@function</span> <span>opposite-direction</span><span(</span><span>$direction</span><span)</span> <span{</span>
+	<span>// …</span><span}</span></code></pre></figure>
+	<figure class="highlight"><pre><code data-lang="sass">
+	<span>$vertical-rhythm-baseline</span><span:</span> <span1</span><span>.5rem</span><span>=size</span><span(</span><span>$width</span><span,</span> <span>$height</span><span:</span> <span>$width</span><span)</span><span>// …</span><span@function</span> <span>opposite-direction</span><span(</span><span>$direction</span><span)</span>
+	<span//</span> <">…</span></code></pre></figure>
+	<h2 id="const">Константы</h2>
+	<p>Sass не даёт какой-либо способ определения таких переменных, поэтому мы должны придерживаться строгих соглашений об именовании.</p>
+	<p>Как и для многих языков, я предлагаю делать константы переменными в верхнем регистре. Это не только очень старое соглашение, но это также хорошо контрастирует с обычными строчными переменными.</p>
+	<figure class="highlight"><pre><code data-lang="scss">
+	<span>// Yep</span><span>$CSS_POSITIONS</span><span:</span> <span>top</span><span,</span> <span>right</span><span,</span> <span>bottom</span><span,</span> <span>left</span><span,</span> <span>center</span><span;</span><span>// Nope</span><span>$css-positions</span><span:</span> <span>top</span><span,</span> <span>right</span><span,</span> <span>bottom</span><span,</span> <span>left</span><span,</span> <span>center</span><span;</span></code></pre></figure>
+	<figure class="highlight"><pre><code data-lang="sass">
+	<span>// Yep</span><span>$CSS_POSITIONS</span><span:</span> <span>top</span><span,</span> <span>right</span><span,</span> <span>bottom</span><span,</span> <span>left</span><span,</span> <span>center</span><span>// Nope</span><span>$css-positions</span><span:</span> <span>top</span><span,</span> <span>right</span><span,</span> <span>bottom</span><span,</span> <span>left</span><span,</span> <span>center</span></code></pre></figure>
+	<h2 id="namescope">Пространство имён</h2>
+	<p>Если вы собираетесь распространять ваш код Sass, например, как библиотеку, фреймворк, сетку или что угодно, вы, возможно, захотите рассмотреть пространства имён всех своих переменных, функциях, примесях и placeholder’ах, так чтобы они не соперничали с чьим-либо кодом.</p>
+	<p>Например, если вы работаете над проектом <em>Sassy Unicorn</em>, который предназначен для использования разработчиками по всему миру (кто бы не хотел, не так ли?), вы можете рассмотреть возможность использования <code>su-</code> как пространство имен. Это достаточно верно, чтобы предотвратить любые споры в именах, и достаточно коротко, чтобы не быть болью при написании кода.</p>
+	<figure class="highlight"><pre><code data-lang="scss">
+	<span>$su-configuration</span><span:</span> <span(</span> <">…</span> <span);</span><span@function</span> <span>su-rainbow</span><span(</span><span>$unicorn</span><span)</span> <span{</span><span>// …</span><span}</span></code></pre></figure>
+	<figure class="highlight"><pre><code data-lang="sass">
+	<span>$su-configuration</span><span:</span> <span(</span> <">…</span> <span)</span><span@function</span> <span>su-rainbow</span><span(</span><span>$unicorn</span><span)</span><span//</span> <">…</span></code></pre></figure>
+	<div class="note">
+	<p>Обратите внимание, что автоматическое создание пространств имён, безусловно, цель для предстоящего проекта <code>@import</code> из Sass 4.0. Так как это становится всё ближе и ближе, то использование библиотек с пространством имён, написанным вручную, может стать сложнее в использовании.</p></div>
+
+	<h1 id="comments">Комментирование</h1>
+	<p>CSS является сложным языком, полным хаков и курьёзов. Из-за этого он должен быть прокомментирован, особенно, если вы или кто-то ещё собирается читать и обновлять код через 6 месяцев или 1 год спустя. Не ставьте себя или кого-нибудь другого в положение <em>я-не-писал-этого-о-боже-почему</em>.</p>
+	<p>Есть ещё много возможностей для комментариев в CSS. Они могут объяснять:</p>
+	<ul><li>структуру и/или роль файла</li>
+	<li>цель набора правил;</li>
+	<li>объяснение использования волшебного числа;</li>
+	<li>причину объявления CSS;</li>
+	<li>порядок объявления в CSS;</li>
+	<li>ход мысли.</li></ul>
+	<p>И много других различных причин... Комментирование занимает очень мало времени, когда делается вместе с написанием кода, так что делайте это в нужное время. Возвращаясь на кусок кода, чтобы комментировать его, не только совершенно невозможно, но и крайне раздражительно.</p>
+	<h2 id="whritecomments">Написание комментариев</h2>
+	<p>В идеале, <em>любой</em> набор CSS правил должен предшествовать комментарию в стиле Си, объясняя цель блока CSS. Этот комментарий также принимает пронумерованные объяснения по поводу конкретных частей набора правил. Например:</p>
+	<figure class="highlight"><pre><code data-lang="scss">
+	<span>/**
+	* Вспомогательный класс для усечения и добавления многоточия в слишком длинную строку
+	* на одной строке.
+	* 1. Предотвращает сворачивание содержимого, оставляет его на одной строке.
+	* 2. Добавляет многоточие на конце строки.
+	*/</span>
+	<span>.ellipsis</span> <span{</span>
+	<span>white-space</span><span:</span> <span>nowrap</span><span;</span> <span>/* 1 */</span>
+	<span>text-overflow</span><span:</span> <spanellipsis</span><span;</span> <span>/* 2 */</span>
+	<span>overflow</span><span:</span> <span>hidden</span><span;</span>
+	<span}</span></code></pre></figure></div-syntax="sass">
+	<figure class="highlight"><pre><code data-lang="sass">
+	<span>/**</span> <span>* Вспомогательный класс для усечения и добавления многоточия в слишком длинную строку</span> <span>* на одной строке.</span> <span>* 1. Предотвращает сворачивание содержимого, оставляет его на одной строке.</span> <span>* 2. Добавляет многоточие на конце строки.</span> <span>*/</span><span>.ellipsis</span>
+	<span>white-space</span><span:</span> <span>nowrap</span> <span/*</span> <span1</span> <span*/</span>
+	<span>text-overflow</span><span:</span> <spanellipsis</span> <span/*</span> <span2</span> <span*/</span>
+	<span>overflow</span><span:</span> <span>hidden</span></code></pre></figure>
+	<p>В основном, всё, что не является очевидным на первый взгляд, должно быть прокомментировано. Нет такого понятия, как слишком много документации. Помните, что вы не можете <em>комментировать слишком много</em>, так что пишите комментарии ко всему, что стоит того.</p>
+	<p>Комментируя раздел Sass, используйте встроенные комментарии Sass вместо блока в стиле Си. Это делает комментарий невидимым на выходе, даже в расширенном режиме в процессе разработки.</p>
+	<figure class="highlight"><pre><code data-lang="scss">
+	<span>// Добавить текущий модуль в список импортируемых модулей.
+	// `!global` – важный флаг для глобального обновления переменной.</span><span>$imported-modules</span><span:</span> <span>append</span><span(</span><span>$imported-modules</span><span,</span> <span>$module</span><span)</span> <span!</span><spanglobal</span><span;</span></code></pre></figure>
+	<figure class="highlight"><pre><code data-lang="sass">
+	<span>// Добавить текущий модуль в список импортируемых модулей.
+	// `!global` – важный флаг для глобального обновления переменной.</span><span>$imported-modules</span><span:</span> <span>append</span><span(</span><span>$imported-modules</span><span,</span> <span>$module</span><span)</span> <span!</span><spanglobal</span></code></pre></figure>
+	<h2 id="sassdocs">Документирование</h2>
+	<p>Каждая переменная, функция, примесь и placeholder, который предназначен для повторного использования во всём коде, должен быть задокументирован как часть глобального API с использованием <a href="http://sassdoc.com">SassDoc</a>.</p>
+	<p>SassDoc обеспечивает два различных синтаксиса для комментариев: стиль Си и строчный. Например, оба из следующих фрагментов являются допустимыми комментариями SassDoc:</p>
+	<figure class="highlight"><pre><code data-lang="scss">
+	<span>/**
+	* Вертикальный ритм, использующийся во всём коде.
+	* @type Length
+	*/</span><span>$vertical-rhythm-baseline</span><span:</span> <span1</span><span>.5rem</span><span;</span></code></pre></figure>
+	<figure class="highlight"><pre><code data-lang="sass">
+	<span>/**</span> <span>* Вертикальный ритм, использующийся во всём коде.</span> <span>* @type Length</span> <span>*/</span><span>$vertical-rhythm-baseline</span><span:</span> <span1</span><span>.5rem</span></code></pre></figure>
+	<figure class="highlight"><pre><code data-lang="scss">
+	<span>/// Вертикальный ритм, использующийся во всём коде.
+	/// @type Length</span><span>$vertical-rhythm-baseline</span><span:</span> <span1</span><span>.5rem</span><span;</span></code></pre></figure></divclass="code-block__wrapper" data-syntax="sass">
+	<figure class="highlight"><pre><code data-lang="sass">
+	<span>/// Вертикальный ритм, использующийся во всём коде.
+	/// @type Length</span><span>$vertical-rhythm-baseline</span><span:</span> <span1</span><span>.5rem</span></code></pre></figure>
+	<div class="note"><p>Необходимо три косых (<code>/</code>).</p></div>
+	<p>SassDoc выполняет две основные роли:</p>
+	<ul><li>обходит стандартные комментарии, используя систему аннотации на основе всего, что является частью открытого или закрытого API;</li>
+	<li>возможность создавать HTML-версию документации API с помощью любого инструмента генерирования SassDoc (CLI tool, Grunt, Gulp, Broccoli, Node…).</li></ul>
+	<figure role="group"><img alt="Документация, сгенерированная в SassDoc " sizes="100vw" srcset="https://d33wubrfki0l68.cloudfront.net/68a6846edb356c44cb53dda05760797b2d1baf81/c2a92/assets/images/sassdoc-preview_small.png 540w, https://d33wubrfki0l68.cloudfront.net/97984b488095bfee6f2c6e47c500915b665cfe86/5aa53/assets/images/sassdoc-preview_medium.png 900w, https://d33wubrfki0l68.cloudfront.net/c5894fe21ae4828475ba1483a6fb1d94e151a3d5/4d6c5/assets/images/sassdoc-preview_large.png 1200w, https://d33wubrfki0l68.cloudfront.net/a73c466f7ea902521035603506888db0af2c8e3d/0aa5a/assets/images/sassdoc-preview_huge.png 1590w"><figcaption>Документация, сгенерированная в SassDoc</figcaption></figure>
+	<p>Вот пример примеси, обширно документированной в SassDoc:</p>
+	<figure class="highlight"><pre><code data-lang="scss">
+	<span>/// Примесь позволяет определять `width` и `height` одновременно.
+	///
+	/// @author Hugo Giraudel
+	///
+	/// @access public
+	///
+	/// @param {Length} $width - `width` элемента
+	/// @param {Length} $height ($width) - `height` элемента
+	///
+	/// @example scss - Использование
+	/// .foo {
+	///   @include size(10em);
+	/// }
+	///
+	/// .bar {
+	///   @include size(100%, 10em);
+	/// }
+	///
+	/// @example css - Вывод CSS
+	/// .foo {
+	///   width: 10em;
+	///   height: 10em;
+	/// }
+	///
+	/// .bar {
+	///   width: 100%;
+	///   height: 10em;
+	/// }</span><span@mixin</span> <span>size</span><span(</span><span>$width</span><span,</span> <span>$height</span><span:</span> <span>$width</span><span)</span> <span{</span><span>width</span><span:</span> <span>$width</span><span;</span><span>height</span><span:</span> <span>$height</span><span;</span>
+	<span}</span></code></pre></figure></div-syntax="sass">
+	<figure class="highlight"><pre><code data-lang="sass">
+	<span>/// Примесь позволяет определять `width` и `height` одновременно.
+	///
+	/// @author Hugo Giraudel
+	///
+	/// @access public
+	///
+	/// @param {Length} $width - `width` элемента
+	/// @param {Length} $height ($width) - `height` элемента
+	///
+	/// @example scss - Использование
+	/// .foo
+	///   +size(10em)
+	///
+	/// .bar
+	///   +size(100%, 10em)
+	///
+	/// @example css - Вывод CSS
+	/// .foo {
+	///   width: 10em;
+	///   height: 10em;
+	/// }
+	///
+	/// .bar {
+	///   width: 100%;
+	///   height: 10em;
+	/// }</span><span>=size</span><span(</span><span>$width</span><span,</span> <span>$height</span><span:</span> <span>$width</span><span)</span>
+	<span>width</span><span:</span> <span>$width</span>
+	<span>height</span><span:</span> <span>$height</span></code></pre></figure>
+</div>
+</article>
+
+<article id="understand">
+	<header class="article--header">
+		<h1 class="article--title" id="architecture">Архитектура</h1>
+</header>
+<div class="text">
+	<p>Разработка архитектуры CSS-проекта, вероятно, одна из самых сложных вещей, которые вы должны будете сделать в жизни проекта. Сохранять архитектуру последовательной и значимой – ещё сложнее.</p>
+	<p>К счастью, одно из главных преимуществ использования CSS-препроцессоров – в возможности разделить кодовую базу на несколько файлов без ущерба для производительности (в отличие от CSS-правила <code>@import</code>). Благодаря <code>@import</code> в Sass, совершенно безопасно (и на самом деле рекомендуется) использовать столько файлов, сколько необходимо в развитии, все они потом будут собраны в одной таблице стилей и так попадут на production.</p>
+	<p>Есть много популярных архитектур CSS-проектов: <a href="http://oocss.org/">OOCSS</a>, <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a>, <a href="http://getbootstrap.com/">Bootstrap</a>, <a href="http://foundation.zurb.com/">Foundation</a> и тому подобные… все они имеют свои достоинства, плюсы и минусы.</p>
+	<p>Я сам использую подход, который очень похож на <a href="https://smacss.com/">SMACSS</a> от <a href="http://snook.ca/">Джонатана Снука</a>, который сосредотачивается на сохранении простоты и очевидности.</p>
+	<div class="note">
+	<p>Я понял, что в основном архитектура зависит от проекта. Используйте или адаптируйте предложенное решение так, чтобы вы имели дело с системой, которая соответствует вашим потребностям.</p>
+	</div>
+	<h2 id="components">Компоненты</h2>
+	<p>Компоненты могут быть чем угодно, до тех пор, пока они:</p>
+	<ul>
+		<li>делают одну и только одну вещь;</li>
+	<li>могут быть повторно используемы;</li>
+	<li>независимы.</li></ul>
+	<p>Например, форма поиска должна рассматриваться в качестве компонента. Она должна иметь возможность быть используемой повторно на разных страницах, в различных ситуациях. Она не должна зависеть от положения в DOM (в подвале, в боковой панели, в основном содержимом…).</p>
+	<p>Большинство интерфейсов можно рассматривать как набор маленьких компонентов, и я настоятельно рекомендую вам придерживаться этой парадигмы. Это позволит не только сократить количество CSS, необходимого для всего проекта, но также упростить его поддержку, и прибрать хаотический беспорядок.</p>
+	<h2 id="sevenone">Шаблон 7-1</h2>
+	<p>Возвратимся к архитектуре? Я обычно использую так называемый <em>Шаблон 7-1</em>: 7 папок, 1 файл. Обычно у вас есть все ваши куски в 7 разных папках, и один файл в корневом каталоге (обычно с именем <code>main.scss</code>), который импортирует их все.</p>
+	<ul>
+		<li><code>base/</code></li>
+	<li><code>components/</code></li>
+	<li><code>layout/</code></li>
+	<li><code>pages/</code></li>
+	<li><code>themes/</code></li>
+	<li><code>utils/</code></li>
+	<li><code>vendors/</code></li></ul>
+	<p>И, конечно же:</p>
+	<ul>
+		<li><code>main.scss</code></li>
+	</ul>
+	<p>В идеале, по итогу получается нечто похожее:</p>
+	<div class="highlight"><pre><code>
+	sass/
+	|
+	|– base/
+	|   |– _reset.scss       # Reset/normalize
+	|   |– _typography.scss  # Типографские правила
+	|   …                    # и т.д.
+	|
+	|– components/
+	|   |– _buttons.scss     # Кнопки
+	|   |– _carousel.scss    # Карусель
+	|   |– _cover.scss       # Обложка
+	|   |– _dropdown.scss    # Выпадающий список
+	|   …                    # и т.д.
+	|
+	|– layout/
+	|   |– _navigation.scss  # Навигация
+	|   |– _grid.scss        # Сетка
+	|   |– _header.scss      # Шапка
+	|   |– _footer.scss      # Подвал
+	|   |– _sidebar.scss     # Боковая панель
+	|   |– _forms.scss       # Формы
+	|   …                    # и т.д.
+	|
+	|– pages/
+	|   |– _home.scss        # Стили, особые для главной страницы
+	|   |– _contact.scss     # Стили, особые для страницы контактов
+	|   …                    # и т.д.
+	|
+	|– themes/
+	|   |– _theme.scss       # Тема по умолчанию
+	|   |– _admin.scss       # Тема админа
+	|   …                    # и т.д.
+	|
+	|– utils/
+	|   |– _variables.scss   # Переменные Sass
+	|   |– _functions.scss   # Функции Sass
+	|   |– _mixins.scss      # Примеси Sass
+	|   |– _helpers.scss     # Помощники классов &amp; placeholder’ов
+	|
+	|– vendors/
+	|   |– _bootstrap.scss   # Bootstrap
+	|   |– _jquery-ui.scss   # jQuery UI
+	|   …                    # и т.д.
+	|
+	|
+	`– main.scss             # главный файл Sass
+	</code></pre></div>
+	<div class="note">
+		<p>Следующие файлы имеют то же соглашение по именованию, что и выше: они отделены нижним подчеркиванием.</p>
+	</div>
+	<h3 id="base">Папка Base</h3>
+	<p>Папка <code>base/</code> содержит то, что мы можем назвать общим шаблоном проекта. Там вы можете найти файл сброса, некоторые типографские правила, и, вероятно, стили (я привык их называть <code>_base.scss</code>), определяющие некоторые стандартные стили для часто используемых элементов HTML.</p>
+	<ul><li><code>_base.scss</code></li>
+		<li><code>_reset.scss</code></li>
+		<li><code>_typography.scss</code></li>
+	</ul>
+	<h3 id="layout">Папка Layout</h3>
+	<p>Папка <code>layout/</code> содержит всё, что принимает участие в постройке раскладки сайта или приложения. Эта папка может содержать стили для основных частей сайта (шапка, подвал, навигация, боковая панель…), сетка или даже CSS-стили для всех форм.</p>
+	<ul><li><code>_grid.scss</code></li>
+		<li><code>_header.scss</code></li>
+		<li><code>_footer.scss</code></li>
+		<li><code>_sidebar.scss</code></li>
+		<li><code>_forms.scss</code></li>
+		<li><code>_navigation.scss</code></li></ul>
+	<div class="note">
+		<p>Папка <code>layout/</code> может быть названа <code>partials/</code>, на ваше усмотрение.</p>
+	</div>
+	<h3 id="components">Папка Components</h3>
+	<p>Для маленьких компонентов есть папка <code>components/</code>. В то время, как <code>layout/</code> – <em>основные</em> (определяют общий каркас), код внутри <code>components/</code> больше сфокусирован на виджетах и содержит все модули, вроде слайдера, загрузчика и тому подобных виджетов. Обычно файлов в <code>components/</code> много, если приложение или сайт состоит из множества мелких модулей.</p>
+	<ul><li><code>_media.scss</code></li>
+	<li><code>_carousel.scss</code></li>
+	<li><code>_thumbnails.scss</code></li></ul>
+	<div class="note">
+		<p>Папка <code>components/</code> может называться <code>modules/</code>, на ваше усмотрение.</p>
+	</div>
+	<h3 id="pages">Папка Pages</h3>
+	<p>Если у вас есть стили, зависящие от страницы, лучше положить их в папку <code>pages/</code>, в файл, названный в честь страницы. Например, не редкость – иметь очень конкретные стили для главной страницы, следовательно, существует потребность в <code>_home.scss</code> в <code>pages/</code>.</p>
+	<ul><li><code>_home.scss</code></li>
+	<li><code>_contact.scss</code></li></ul>
+	<div class="note">
+		<p>В зависимости от способа доставки кода, эти файлы можно было бы назвать самостоятельно, чтобы избежать их объединения с другими стилями. На ваше усмотрение.</p>
+	</div>
+	<h3 id="themes">Папка Themes</h3>
+	<p>В больших сайтах и проложениях не редко есть разные темы оформления. Есть разные способы работы с темами, я лично предпочитаю складывать их в папку <code>themes/</code>.</p>
+	<ul><li><code>_theme.scss</code></li>
+		<li><code>_admin.scss</code></li></ul>
+	<div class="note">
+		<p>Это очень зависит от проекта и не сильно распространено.</p>
+	</div>
+	<h3 id="utils">Папка Utils</h3>
+	<p>Папка <code>utils/</code> собирает все инструменты и помощники Sass в проекте. Каждая глобальная переменная, функция и примесь должна быть помещена сюда.</p>
+	<p>Правило для этой папки в том, что она не должна создавать CSS при компиляции сама по себе. Это не что иное, как помощники Sass.</p>
+	<ul><li><code>_variables.scss</code></li>
+		<li><code>_mixins.scss</code></li>
+		<li><code>_functions.scss</code></li>
+		<li><code>_placeholders.scss</code> (часто называется <code>_helpers.scss</code>)</li>
+	</ul>
+	<div class="note">
+		<p>Папка <code>utils/</code> может также быть названа <code>helpers/</code>, <code>sass-helpers/</code> или <code>sass-utils/</code>, на ваше усмотрение.</p>
+	</div>
+	<h3 id="vendors">Папка Vendors</h3>
+	<p>И последнее, но не менее важное, что большинство проектов будут иметь папку <code>vendors/</code>, содержащую все CSS-файлы из внешних библиотек и фреймворков – Normalize, Bootstrap, jQueryUI, FancyCarouselSliderjQueryPowered и так далее. Нахождение этих файлов в этой папке – хороший способ сказать: “Эй, это не я писал, не мой код, не моя ответственность”.</p>
+	<ul><li><code>_normalize.scss</code></li>
+	<li><code>_bootstrap.scss</code></li>
+	<li><code>_jquery-ui.scss</code></li>
+	<li><code>_select2.scss</code></li></ul>
+	<p>Если вы хотите что-то переписать в этих файлах, то я рекомендую вам ввести восьмую папку <code>vendors-extensions/</code>, в которой вы будете хранить файлы перезаписи свойств с точно такими же именами.</p>
+	<p>Например, файл <code>vendors-extensions/_boostrap.scss</code>, содержащий все CSS-правила на перезапись CSS-правил Bootstrap. Это для того, чтобы не править сами внешние модули, что на самом деле не очень хорошая идея.</p>
+	<h3 id="main">Файл Main</h3>
+	<p>Главный файл (обычно названный <code>main.scss</code>) должен быть единственным файлом Sass, который не начинается с нижнего подчеркивания. Этот файл не должен содержать ничего, кроме <code>@import</code> и комментариев.</p>
+	<p>Файлы должны быть импортированы в соответствии с папкой размещения, один за другим, в соответствуещем порядке:</p>
+	<ol><li><code>vendors/</code></li>
+		<li><code>utils/</code></li>
+		<li><code>base/</code></li>
+		<li><code>layout/</code></li>
+		<li><code>components/</code></li>
+		<li><code>pages/</code></li>
+		<li><code>themes/</code></li></ol>
+	<p>Чтобы улучшить читаемость, главный файл должен следовать этим рекомендациям:</p>
+	<ul><li>один <code>@import</code> на строку;</li>
+	<li>не вставлять новые строки между файлами из одной папки;</li>
+	<li>новая строка после вставки последнего <code>@import</code> из одной и той же папки;</li>
+	<li>не писать расширения файлов и нижние подчеркивания.</li></ul>
+	<figure class="highlight"><pre><code data-lang="scss">
+	<span>@import</span> <span>'vendors/bootstrap'</span><span>;</span>
+	<span>@import</span> <span>'vendors/jquery-ui'</span><span>;</span>
+	<span>@import</span> <span>'utils/variables'</span><span>;</span>
+	<span>@import</span> <span>'utils/functions'</span><span>;</span>
+	<span>@import</span> <span>'utils/mixins'</span><span>;</span>
+	<span>@import</span> <span>'utils/placeholders'</span><span>;</span>
+	<span>@import</span> <span>'base/reset'</span><span>;</span>
+	<span>@import</span> <span>'base/typography'</span><span>;</span>
+	<span>@import</span> <span>'layout/navigation'</span><span>;</span>
+	<span>@import</span> <span>'layout/grid'</span><span>;</span>
+	<span>@import</span> <span>'layout/header'</span><span>;</span>
+	<span>@import</span> <span>'layout/footer'</span><span>;</span>
+	<span>@import</span> <span>'layout/sidebar'</span><span>;</span>
+	<span>@import</span> <span>'layout/forms'</span><span>;</span>
+	<span>@import</span> <span>'components/buttons'</span><span>;</span>
+	<span>@import</span> <span>'components/carousel'</span><span>;</span>
+	<span>@import</span> <span>'components/cover'</span><span>;</span>
+	<span>@import</span> <span>'components/dropdown'</span><span>;</span>
+	<span>@import</span> <span>'pages/home'</span><span>;</span>
+	<span>@import</span> <span>'pages/contact'</span><span>;</span>
+	<span>@import</span> <span>'themes/theme'</span><span>;</span>
+	<span>@import</span> <span>'themes/admin'</span><span>;</span></code></pre></figure>
+	<figure class="highlight"><pre><code data-lang="sass">
+	<span>@import</span> <span>vendors/bootstrap</span>
+	<span>@import</span> <span>vendors/jquery-ui</span>
+	<span>@import</span> <span>utils/variables</span>
+	<span>@import</span> <span>utils/functions</span>
+	<span>@import</span> <span>utils/mixins</span>
+	<span>@import</span> <span>utils/placeholders</span>
+	<span>@import</span> <span>base/reset</span>
+	<span>@import</span> <span>base/typography</span>
+	<span>@import</span> <span>layout/navigation</span>
+	<span>@import</span> <span>layout/grid</span>
+	<span>@import</span> <span>layout/header</span>
+	<span>@import</span> <span>layout/footer</span>
+	<span>@import</span> <span>layout/sidebar</span>
+	<span>@import</span> <span>layout/forms</span>
+	<span>@import</span> <span>components/buttons</span>
+	<span>@import</span> <span>components/carousel</span>
+	<span>@import</span> <span>components/cover</span>
+	<span>@import</span> <span>components/dropdown</span>
+	<span>@import</span> <span>pages/home</span>
+	<span>@import</span> <span>pages/contact</span>
+	<span>@import</span> <span>themes/theme</span>
+	<span>@import</span> <span>themes/admin</span></code></pre></figure>
+	<p>Существует ещё один способ импорта, который действует так же. С одной стороны, это делает файл более читаемым. С другой стороны, это делает его обновление немного более болезненным. Во всяком случае, вам решать, что лучше, это не имеет большого значения. Основной файл следует следующим принципам:</p>
+	<ul><li>один <code>@import</code> на папку;</li>
+	<li>снос строки после <code>@import</code>;</li>
+	<li>каждый файл на своей строке;</li>
+	<li>новая строка после последнего импорта файла из папки;</li>
+	<li>не писать расширения файлов и нижние подчеркивания.</li></ul>
+	<figure class="highlight"><pre><code data-lang="scss">
+	  <span>@import</span>
+	  <span>'vendors/bootstrap'</span><span>,</span>
+	  <span>'vendors/jquery-ui'</span><span>;</span>
+	<span>@import</span>
+	  <span>'utils/variables'</span><span>,</span>
+	  <span>'utils/functions'</span><span>,</span>
+	  <span>'utils/mixins'</span><span>,</span>
+	  <span>'utils/placeholders'</span><span>;</span>
+	<span>@import</span>
+	  <span>'base/reset'</span><span>,</span>
+	  <span>'base/typography'</span><span>;</span>
+	<span>@import</span>
+	  <span>'layout/navigation'</span><span>,</span>
+	  <span>'layout/grid'</span><span>,</span>
+	  <span>'layout/header'</span><span>,</span>
+	  <span>'layout/footer'</span><span>,</span>
+	  <span>'layout/sidebar'</span><span>,</span>
+	  <span>'layout/forms'</span><span>;</span>
+	<span>@import</span>
+	  <span>'components/buttons'</span><span>,</span>
+	  <span>'components/carousel'</span><span>,</span>
+	  <span>'components/cover'</span><span>,</span>
+	  <span>'components/dropdown'</span><span>;</span>
+	<span>@import</span>
+	  <span>'pages/home'</span><span>,</span>
+	  <span>'pages/contact'</span><span>;</span>
+	<span>@import</span>
+	  <span>'themes/theme'</span><span>,</span>
+	  <span>'themes/admin'</span><span>;</span>
+	</code></pre></figure>
+	  <figure class="highlight"><pre><code data-lang="sass">
+	  	<span>@import</span>
+	  <span>vendors</span><span>/</span><span>bootstrap</span><span>,</span>
+	  <span>vendors</span><span>/</span><span>jquery-ui</span>
+	<span>@import</span>
+	  <span>utils</span><span>/</span><span>variables</span><span>,</span>
+	  <span>utils</span><span>/</span><span>functions</span><span>,</span>
+	  <span>utils</span><span>/</span><span>mixins</span><span>,</span>
+	  <span>utils</span><span>/</span><span>placeholders</span>
+	<span>@import</span>
+	  <span>base</span><span>/</span><span>reset</span><span>,</span>
+	  <span>base</span><span>/</span><span>typography</span>
+	<span>@import</span>
+	  <span>layout</span><span>/</span><span>navigation</span><span>,</span>
+	  <span>layout</span><span>/</span><span>grid</span><span>,</span>
+	  <span>layout</span><span>/</span><span>header</span><span>,</span>
+	  <span>layout</span><span>/</span><span>footer</span><span>,</span>
+	  <span>layout</span><span>/</span><span>sidebar</span><span>,</span>
+	  <span>layout</span><span>/</span><span>forms</span>
+	<span>@import</span>
+	  <span>components</span><span>/</span><span>buttons</span><span>,</span>
+	  <span>components</span><span>/</span><span>carousel</span><span>,</span>
+	  <span>components</span><span>/</span><span>cover</span><span>,</span>
+	  <span>components</span><span>/</span><span>dropdown</span>
+	<span>@import</span>
+	  <span>pages</span><span>/</span><span>home</span><span>,</span>
+	  <span>pages</span><span>/</span><span>contact</span>
+	<span>@import</span>
+	  <span>themes</span><span>/</span><span>theme</span><span>,</span>
+	  <span>themes</span><span>/</span><span>admin</span></code></pre></figure>
+	<div class="note">
+		<p>Для того, чтобы не импортировать каждый файл вручную, есть расширение Ruby Sass, которое называется <a href="https://github.com/chriseppstein/sass-globbing">sass-globbing</a>, оно позволяет использовать glob-шаблон в <code>@import</code> Sass, например – <code>@import "components/*"</code>.</p>
+		<p>Как было сказано, я не рекомендую это, потому что используется упорядочение по алфавиту, что иногда может быть не тем, что вы хотите, особенно, когда вы имеете дело с языком, в котором важно упорядочение.</p>
+	</div>
+	<h2 id="shamefile">Файл позора</h2>
+	<p>Это интересная идея, которая стала популярна благодаря <a href="http://csswizardry.com">Гарри Робертсу</a>, <a href="http://daverupert.com">Дэйву Руперту</a> и <a href="http://css-tricks.com">Крису Койеру</a> и состоит в том, чтобы складывать все хаки и код, которым вы не гордитесь, в <em>файл позора</em>. Поэтому этот файл и имеет такое драматическое название – <code>_shame.scss</code>, импортируется в самом конце.</p>
+	<figure class="highlight"><pre><code data-lang="scss">
+		<span>/**
+	 * Особое исправление навигации.
+	 *
+	 * Кто-то использовал ID в коде шапки (`#header a {}`), который перекрывает
+	 * селекторы nav (`.site-nav a {}`). Используйте `!important`, чтобы
+	 * перекрыть их, до тех пор, пока я не перепишу шапку.
+	 */</span>
+	<span>.site-nav</span> <span>a</span> <span>{</span>
+    <span>color</span><span>:</span> <span>#BADA55</span> <span>!</span><span>important</span><span>;</span>
+	<span>}</span></code></pre></figure>
+	<figure class="highlight"><pre><code data-lang="sass">
+		<span>/**
+	</span> <span>* Особое исправление навигации.
+	</span> <span>*
+	</span> <span>* Кто-то использовал ID в коде шапки (`#header a {}`), который перекрывает
+	</span> <span>* селекторы nav (`.site-nav a {}`). Используйте `!important`, чтобы
+	</span> <span>* перекрыть их, до тех пор, пока я не перепишу шапку.
+	</span> <span>*/
+	</span><span>.site-nav</span> <span>a</span>
+    <span>color</span><span>:</span> <span>#BADA55</span> <span>!</span><span>important</span></code></pre></figure>
+
+	<h1 id="variables">Переменные</h1>
+	<p>Переменные являются сутью любого языка программирования. Они позволяют нам использовать значения без необходимости копировать их снова и снова. Самое главное, что они позволяют обновлять это значение очень просто. Никакого больше поиска с заменой или ручной рутины.</p>
+	<p>Я советую создавать переменные только когда это имеет смысл. Не создавайте новые переменные чёрт знает зачем, это не поможет. Новая переменная должна быть создана только тогда, когда выполняются следующие условия:</p>
+	<ul><li>это значение повторяется хотя бы дважды;</li>
+		<li>это значение скорее всего будет обновлено хотя бы один раз;</li>
+		<li>все вхождения значения привязаны к переменной (т.е не по стечению обстоятельств).</li></ul>
+	<p>В принципе, нет никакого смысла объявлять переменную, которая никогда не будет обновлена или которая используется только в одном месте.</p>
+	<h2 id="scopes">Области видимости</h2>
+	<p>Документация говорит о <em>затенении глобальной переменной</em>. При объявлении переменной, которая уже существует в глобальной области видимости, во внутренней области видимости (селектор, функция, примесь…), локальная переменная называется <em>затенённой</em> глобальной. В общем, она перезаписывается только для локальной области видимости.</p>
+	<p>Следующий фрагмент кода объясняет задумку <em>затенения переменных</em>.</p>
+	<div data-syntax="scss">
+		<figure class="highlight"><pre><code data-lang="scss"><span>// Объявить глобальную переменную на корневом уровне.
+	</span><span>$variable</span><span>:</span> <span>'initial value'</span><span>;</span>
+	<span>// Создать примесь, которая перезаписывает глобальные переменные.</span><span>@mixin</span> <span>global-variable-overriding</span> <span>{</span>
+	  <span>$variable</span><span>:</span> <span>'mixin value'</span> <span>!</span><span>global</span><span>;</span>
+	<span>}</span>
+	<span>.</span><span>local-scope</span><span>:</span><span>:</span><span>before</span> <span>{</span>
+	  <span>// Создать локальную переменную, которая затеняет глобальную.
+	</span>  <span>$variable</span><span>:</span> <span>'local value'</span><span>;</span>
+	  <span>// Применить примесь: она перезапишет глобальную переменную.
+	</span>  <span>@include</span> <span>global-variable-overriding</span><span>;</span>
+	  <span>// Вывести значение переменной.
+	</span>  <span>// Здесь значение из **локальной** переменной, так как она затеняет
+	</span>  <span>// глобальную.
+	</span>  <span>content</span><span>:</span> <span>$variable</span><span>;</span>
+	<span>}</span>
+	<span>// Вывести эту переменную в другом селекторе, который не делает затенения.
+	// Здесь значение **глобальное**, как и ожидалось.
+	</span><span>.</span><span>other-local-scope</span><span>:</span><span>:</span><span>before</span> <span>{</span>
+	  <span>content</span><span>:</span> <span>$variable</span><span>;</span>
+	<span>}</span></code></pre></figure>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass">
+		<span>// Объявить глобальную переменную на корневом уровне.
+	</span><span>$variable</span><span>:</span> <span>'initial value'</span><span>// Создать примесь, которая перезаписывает глобальные переменные.
+	</span><span>@mixin</span> <span>global-variable-overriding</span>
+	  <span>$variable</span><span>:</span> <span>'mixin value'</span> <span>!</span><span>global</span><span>.</span><span>local-scope</span><span>:</span><span>:</span><span>before</span>
+	  <span>// Создать локальную переменную, которая затеняет глобальную.
+	</span>  <span>$variable</span><span>:</span> <span>'local value'</span>  <span>// Применить примесь: она перезапишет глобальную переменную.
+	</span>  <span>+global-variable-overriding</span>  <span>// Вывести значение переменной.
+	</span>  <span>// Здесь значение из **локальной** переменной, так как она затеняет
+	</span>  <span>// глобальную.
+	</span>
+	<span>// Вывести эту переменную в другом селекторе, который не делает затенения.
+	// Здесь значение **глобальное**, как и ожидалось.
+	</span><span>.</span><span>other-local-scope</span><span>:</span><span>:</span><span>before</span>
+	  <span>content</span><span>:</span> <span>$variable</span></code></pre></figure></div>
+	  <h2 id="default">Флаг <code>!default</code></h2>
+	  <p>При построении библиотеки, фреймворка, сетки или любого кода Sass, который предназначен для использования другими разработчиками, все переменные должны быть определены с флагом <code>!default</code>, чтобы они могли быть перезаписаны.</p>
+	  <div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss">
+	  	<span>$baseline</span><span>:</span> <span>1em</span> <span>!</span><span>default</span><span>;</span></code></pre></figure></div>
+	  <div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass">
+	  	<span>$baseline</span><span>:</span> <span>1em</span> <span>!</span><span>default</span></code></pre></figure></div>
+
+	  <p>Благодаря этому, разработчик может определить свою собственную переменную <code>$baseline</code> <em>перед</em> импортом вашей библиотеки, при этом она не будет переопределена.</p>
+	  <div data-syntax="scss"><figure class="highlight"><pre>
+	  	<code data-lang="scss"><span>// Переменная разработчика
+	</span><span>$baseline</span><span>:</span> <span>2em</span><span>;</span><span>// Ваша библиотека определяет `$baseline`
+	</span><span>@import</span> <span>'your-library'</span><span>;</span><span>//</span> <span>$</span><span>baseline</span> <span>==</span> <span>2em</span><span>;</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass">
+		<span>// Переменная разработчика
+	</span><span>$baseline</span><span>:</span> <span>2em</span><span>// Ваша библиотека определяет `$baseline`
+	</span><span>@import</span> <span>your-library</span><span>//</span> <span>$</span><span>baseline</span> <span>==</span> <span>2em</span></code></pre></figure></div>
+	<h2 id="global">Флаг <code>!global</code></h2>
+	<p>Флаг <code>!global</code> следует использовать только тогда, когда вы переопределяете глобальную переменную из локальной области видимости. При определении переменной на корневом уровне, флаг <code>global</code> должен быть опущен.</p>
+	<div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss">
+		<span>// Yep</span><span>$baseline</span><span>:</span> <span>2em</span><span>;</span><span>// Nope
+	</span><span>$baseline</span><span>:</span> <span>2em</span> <span>!</span><span>global</span><span>;</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass"><span>// Yep</span><span>$baseline</span><span>:</span> <span>2em</span><span>// Nope</span><span>$baseline</span><span>:</span> <span>2em</span> <span>!</span><span>global</span></code></pre></figure></div>
+	<h2 id="maps">Много переменных или карты</h2>
+	<p>Существуют преимущества использования карт перед несколькими отдельными переменными. Главным преимуществом является возможность использовать карты в циклах, чего нельзя сделать с отдельными переменными.</p>
+	<p>Другое преимущество использования карт в способности создать небольшую функцию для получения значений, чтобы обеспечить удобный API. Например, рассмотрим следующий код Sass:</p>
+	<div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss"><span>/// Карта Z-index’ов, собирает все Z-слои приложения
+	/// @access private
+	/// @type Map
+	/// @prop {String} key - Имя слоя
+	/// @prop {Number} value - значение Z, соответствущее ключу
+	</span><span>$z-indexes</span><span>:</span> <span>(</span>
+	  <span>'modal'</span><span>:</span> <span>5000</span><span>,</span>
+	  <span>'dropdown'</span><span>:</span> <span>4000</span><span>,</span>
+	  <span>'default'</span><span>:</span> <span>1</span><span>,</span>
+	  <span>'below'</span><span>:</span> <span>-1</span><span>,</span>
+	<span>);</span><span>/// Получение значения z-index из имени слоя
+	/// @access public
+	/// @param {String} $layer - Имя слоя
+	/// @return {Number}
+	/// @require $z-indexes
+	</span><span>@function</span> <span>z</span><span>(</span><span>$layer</span><span>)</span> <span>{</span>
+	  <span>@return</span> <span>map-get</span><span>(</span><span>$z-indexes</span><span>,</span> <span>$layer</span><span>);</span>
+	<span>}</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass">
+		<span>/// Карта Z-index’ов, собирает все Z-слои приложения
+	/// @access private
+	/// @type Map
+	/// @prop {String} key - Имя слоя
+	/// @prop {Number} value - значение Z, соответствущее ключу
+	</span><span>$z-indexes</span><span>:</span> <span>(</span><span>'modal'</span><span>:</span> <span>5000</span><span>,</span> <span>'dropdown'</span><span>:</span> <span>4000</span><span>,</span> <span>'default'</span><span>:</span> <span>1</span><span>,</span> <span>'below'</span><span>:</span> <span>-1</span><span>,</span><span>)</span><span>/// Получение значения z-index из имени слоя
+	/// @access public
+	/// @param {String} $layer - Имя слоя
+	/// @return {Number}
+	/// @require $z-indexes
+	</span><span>@function</span> <span>z</span><span>(</span><span>$layer</span><span>)</span>
+	  <span>@return</span> <span>map-get</span><span>(</span><span>$z-indexes</span><span>,</span> <span>$layer</span><span>)</span></code></pre></figure></div>
+
+	 <section><h1 id="mixins">Примеси</h1><p>Примеси – одна из самых важных частей из всего языка Sass. Они являются ключом к повторному использованю и DRY-компонентам. Они позволяют авторам определить стили, которые будут повторно использоваться по всей таблице стилей, без надобности к использованию таких неосмысленных классов, как <code class="highlighter-rouge">.float-left</code>.</p>
+	 	<p>Они могут содержать полный набор правил CSS и в значительной степени всё, что разрешено в любом месте документа Sass. Они могут принимать аргументы, как это делают функции. Излишне говорить, что их возможности безграничны.</p>
+	 <p>Ключевое слово здесь – это <em>простота</em>. Не усложняйте код, и, прежде всего, сохраняйте его простым. Если примесь становится больше, чем 20 строк или около того, то она должна быть разбита на более мелкие части или полностью пересмотрена.</p>
+	 <h2 id="mixinsbasic">Основы</h2>
+	 <p>Правило гласит, что если вам случится встретить набор свойств CSS, которые всегда появляются вместе по какой-либо причине (то есть не случайно), то вы можете поместить их в примесь. <a href="http://nicolasgallagher.com/micro-clearfix-hack/">Хак Micro-clearfix от Николаса Галлагера</a> заслуживает быть помещенным в примесь (без аргументов), например.</p>
+
+	<div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss"><span>/// Помощник для сброса внутреннего обтекания
+	/// @author Николас Галлагер
+	/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix</span><span>@mixin</span> <span>clearfix</span> <span>{</span>
+	<span>&amp;</span><span>:</span><span>:</span><span>after</span> <span>{</span><span>content</span><span>:</span> <span>''</span><span>;</span>
+	<span>display</span><span>:</span> <span>table</span><span>;</span>
+	<span>clear</span><span>:</span> <span>both</span><span>;</span><span>}</span>
+	<span>}</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass"><span>/// Помощник для сброса внутреннего обтекания
+	/// @author Николас Галлагер
+	/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix</span><span>@mixin</span> <span>clearfix</span>
+	<span>&amp;</span><span>:</span><span>:</span><span>after</span>
+	<span>content</span><span>:</span> <span>''</span>
+	<span>display</span><span>:</span> <span>table</span>
+	<span>clear</span><span>:</span> <span>both</span></code></pre></figure></div>
+	<p>Еще один обоснованный пример примеси: примесь для определения размера элемента, одновременно определяющий и <code class="highlighter-rouge">ширину</code>, и <code class="highlighter-rouge">высоту</code>. Код станет не только легче набирать, но и легче читать.</p>
+	<div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss">
+	<span>/// Помощник для определения размера
+	/// @author Hugo Giraudel
+	/// @param {Length} $width
+	/// @param {Length} $height</span><span>@mixin</span> <span>size</span><span>(</span><span>$width</span><span>,</span> <span>$height</span><span>:</span> <span>$width</span><span>)</span> <span>{</span>
+	<span>width</span><span>:</span> <span>$width</span><span>;</span>
+	<span>height</span><span>:</span> <span>$height</span><span>;</span>
+	<span>}</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass"><span>/// Помощник для определения размера
+	/// @author Hugo Giraudel
+	/// @param {Length} $width
+	/// @param {Length} $height</span><span>=size</span><span>(</span><span>$width</span><span>,</span> <span>$height</span><span>:</span> <span>$width</span><span>)</span><span>width</span><span>:</span> <span>$width</span>
+	<span>height</span><span>:</span> <span>$height</span></code></pre></figure></div>
+	<h2 id="arglist">Список аргументов</h2>
+	<p>Когда имеете дело с неизвестным количеством аргументов в примеси, используйте <code class="highlighter-rouge">arglist</code>, а не список. Думайте об <code class="highlighter-rouge">arglist</code> как о восьмом скрытом недокументированном типе данных Sass, неявность которого позволяет использовать произвольное количество аргументов в примеси или функции, подписи которых содержат <code class="highlighter-rouge">...</code>.</p>
+	<div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss"><span>@mixin</span> <span>shadows</span><span>(</span><span>$shadows</span><span>...</span><span>)</span> <span>{</span>
+	<span>// type-of($shadows) == 'arglist'</span>  <span>// …</span><span>}</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass"><span>=shadows</span><span>(</span><span>$shadows</span><span>...</span><span>)</span><span>// type-of($shadows) == 'arglist'</span>  <span>//</span> <span>…</span></code></pre></figure></div>
+	<p>Теперь, когда вы делаете примесь, которая принимает несколько аргументов (3 или более), подумайте дважды, прежде чем создавать один список – может быть, будет легче передавать их по одному.</p>
+	<p>Sass очень умён в работе с примесями и объявлениями функций, так что вы можете передавать список или карту в качестве списка аргументов для функции или примеси, и это считается как рядом аргументов.</p>
+	<div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss"><span>@mixin</span> <span>dummy</span><span>(</span><span>$a</span><span>,</span> <span>$b</span><span>,</span> <span>$c</span><span>)</span> <span>{</span><span>// …</span><span>}</span><span>// Yep</span><span>@include</span> <span>dummy</span><span>(</span><span>true</span><span>,</span> <span>42</span><span>,</span> <span>'kittens'</span><span>);</span><span>// Yep but nope</span><span>$params</span><span>:</span> <span>true</span><span>,</span> <span>42</span><span>,</span> <span>'kittens'</span><span>;</span>
+	<span>$value</span><span>:</span> <span>dummy</span><span>(</span><span>nth</span><span>(</span><span>$params</span><span>,</span> <span>1</span><span>)</span><span>,</span> <span>nth</span><span>(</span><span>$params</span><span>,</span> <span>2</span><span>)</span><span>,</span> <span>nth</span><span>(</span><span>$params</span><span>,</span> <span>3</span><span>));</span><span>// Yep</span><span>$params</span><span>:</span> <span>true</span><span>,</span> <span>42</span><span>,</span> <span>'kittens'</span><span>;</span>
+	<span>@include</span> <span>dummy</span><span>(</span><span>$params</span><span>...</span><span>);</span><span>// Yep</span><span>$params</span><span>:</span> <span>(</span><span>'c'</span><span>:</span> <span>'kittens'</span><span>,</span><span>'a'</span><span>:</span> <span>true</span><span>,</span>
+	<span>'b'</span><span>:</span> <span>42</span><span>);</span>
+	<span>@include</span> <span>dummy</span><span>(</span><span>$params</span><span>...</span><span>);</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass"><span>=dummy</span><span>(</span><span>$a</span><span>,</span> <span>$b</span><span>,</span> <span>$c</span><span>)</span>
+	<span>// …</span><span>// Yep</span><span>+dummy</span><span>(</span><span>true</span><span>,</span> <span>42</span><span>,</span> <span>'kittens'</span><span>)</span><span>// Yep but nope</span><span>$params</span><span>:</span> <span>true</span><span>,</span> <span>42</span><span>,</span> <span>'kittens'</span><span>$value</span><span>:</span> <span>dummy</span><span>(</span><span>nth</span><span>(</span><span>$params</span><span>,</span> <span>1</span><span>)</span><span>,</span> <span>nth</span><span>(</span><span>$params</span><span>,</span> <span>2</span><span>)</span><span>,</span> <span>nth</span><span>(</span><span>$params</span><span>,</span> <span>3</span><span>))</span><span>// Yep</span><span>$params</span><span>:</span> <span>true</span><span>,</span> <span>42</span><span>,</span> <span>'kittens'</span>
+	<span>+dummy</span><span>(</span><span>$params</span><span>...</span><span>)</span><span>// Yep</span><span>$params</span><span>:</span> <span>(</span> <span>'c'</span><span>:</span> <span>'kittens'</span><span>,</span> <span>'a'</span><span>:</span> <span>true</span><span>,</span> <span>'b'</span><span>:</span> <span>42</span><span>,</span> <span>)</span>
+	<span>+dummy</span><span>(</span><span>$params</span><span>...</span><span>)</span></code></pre></figure></div>
+	<h2 id="prefix">Примеси и вендорные префиксы</h2>
+	<p>Для начала, если вы можете использовать <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, используйте Autoprefixer. Это сделает код Sass вашего проекта всегда соотвествующим последним обновлениям и сделает работу лучше, чем ваш код для подстановки префиксов.</p>
+	<p>К сожалению, Autoprefixer не всегда подходит. Если вы используете <a href="http://bourbon.io/">Bourbon</a> или <a href="http://compass-style.org/">Compass</a>, вы уже наверника знаете, что они поставляют коллекцию примесей для обработки вендорных префиксов. Используйте их.</p>
+	<p>Если вы не можете использовать Autoprefixer, Bourbon и Compass, то тогда вы должны использовать вашу собственную примесь для подстановки префиска свойствам CSS. Но, пожалуйста, не делайте на свойство по примеси, вручную выводя каждый вендор.</p>
+	<div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss"><span>// Nope</span><span>@mixin</span> <span>transform</span><span>(</span><span>$value</span><span>)</span> <span>{</span>
+	  <span>-webkit-transform</span><span>:</span> <span>$value</span><span>;</span>
+	  <span>-moz-transform</span><span>:</span> <span>$value</span><span>;</span>
+	  <span>transform</span><span>:</span> <span>$value</span><span>;</span>
+	<span>}</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass"><span>// Nope</span><span>=transform</span><span>(</span><span>$value</span><span>)</span>
+	  <span>-webkit-transform</span><span>:</span> <span>$value</span>
+	  <span>-moz-transform</span><span>:</span> <span>$value</span>
+	  <span>transform</span><span>:</span> <span>$value</span></code></pre></figure></div>
+	  <p>Делайте это по-умному.</p>
+	  <div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss"><span>/// Примесь, которая выводит вендорные префиксы
+	/// @access public
+	/// @author HugoGiraudel
+	/// @param {String} $property - свойство CSS без префикса
+	/// @param {*} $value - Сырое значение свойства CSS
+	/// @param {List} $prefixes - Список префиксов для вывода</span><span>@mixin</span> <span>prefix</span><span>(</span><span>$property</span><span>,</span> <span>$value</span><span>,</span> <span>$prefixes</span><span>:</span> <span>())</span> <span>{</span>
+	  <span>@each</span> <span>$prefix</span> <span>in</span> <span>$prefixes</span> <span>{</span>
+	    <span>-</span><span>#{</span><span>$prefix</span><span>}</span><span>-</span><span>#{</span><span>$property</span><span>}</span><span>:</span> <span>$</span><span>value</span><span>;</span>
+	  <span>}</span><span>#{</span><span>$property</span><span>}</span><span>:</span> <span>$</span><span>value</span><span>;</span>
+	<span>}</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass"><span>/// Примесь, которая выводит вендорные префиксы
+	/// @access public
+	/// @author HugoGiraudel
+	/// @param {String} $property - свойство CSS без префикса
+	/// @param {*} $value - Сырое значение свойства CSS
+	/// @param {List} $prefixes - Список префиксов для вывода</span><span>=prefix</span><span>(</span><span>$property</span><span>,</span> <span>$value</span><span>,</span> <span>$prefixes</span><span>:</span> <span>())</span>
+	  <span>@each</span> <span>$prefix</span> <span>in</span> <span>$prefixes</span>
+	    <span>-</span><span>#{</span><span>$prefix</span><span>}</span><span>-</span><span>#{</span><span>$property</span><span>}</span><span>:</span> <span>$value</span>
+	  <span>#{</span><span>$property</span><span>}</span><span>:</span> <span>$value</span></code></pre></figure></div>
+	  <p>Использование этой примеси будет очень простым:</p>
+	  <div data-syntax="scss"><figure class="highlight"><pre><code data-lang="scss">
+	  	<span>.foo</span> <span>{</span>
+	  <span>@include</span> <span>prefix</span><span>(</span><span>transform</span><span>,</span> <span>rotate</span><span>(</span><span>90deg</span><span>)</span><span>,</span> <span>webkit</span> <span>ms</span><span>);</span>
+	<span>}</span></code></pre></figure></div>
+	<div data-syntax="sass"><figure class="highlight"><pre><code data-lang="sass"><span>.foo</span><span>+prefix</span><span>(</span><span>transform</span><span>,</span> <span>rotate</span><span>(</span><span>90deg</span><span>)</span><span>,</span> <span>webkit</span> <span>ms</span><span>)</span></code></pre></figure></div>
+	<p>Пожалуйста, помните о том, что это плохое решение. Например, это не поможет справиться со сложными placeholder’ами, такими как те, которые нужны для Flexbox. Поэтому использование Autoprefixer будет куда лучшим вариантом.</p>
+
+
+    <h1 id="ifelse">Условные операторы</h1>
+    <p>Вы уже, наверное, знаете, что Sass предоставляет условные операторы, такие как <code>@if</code> и <code>@else</code>.</p>
+    <p>Тем не менее, если вам когда-нибудь понадобится использовать их, пожалуйста, следуйте следующим рекоммендациям:</p>
+    <ul><li>Никаких скобок, покуда они не обязательны;</li>
+    <li>Всегда пустая строка перед <code>@if</code>;</li>
+    <li>Всегда разрыв строки после открывающей фигурной скобки (<code>
+    <span>{</span></code>);</li>
+    <li><code>@else</code> на одной строке с предыдущей закрывающей скобкой (<code>}</code>);</li>
+    <li>Всегда новая пустая строка после последней закрывающей скобки (<code>}</code>), если на следующей строке не стоит закрывающая скобка (<code>}</code>).</li></ul>
+    <figure class="highlight"><pre><code data-lang="scss">
+    <span>// Yep</span><span>@if</span> <span>$support-legacy</span> <span>{</span>
+    <span>// …</span><span>}</span> <span>@else</span> <span>{</span>
+    <span>// …</span><span>}</span><span>// Nope</span><span>@if</span> <span>(</span><span>$support-legacy</span> <span>==</span> <span>true</span><span>)</span> <span>{</span>
+    <span>// …</span><span>}</span>
+    <span>@else</span> <span>{</span>
+    <span>// …</span><span>}</span></code></pre></figure>
+    <figure class="highlight"><pre><code data-lang="sass">
+    <span>// Yep</span><span>@if</span> <span>$support-legacy</span>
+    <span>// …</span><span>@else</span>
+    <span>// …</span>
+    <span>// Nope</span><span>@if</span> <span>(</span><span>$support-legacy</span> <span>==</span> <span>true</span><span>)</span>
+    <span>// …</span><span>@else</span>
+    <span>//</span> <span>…</span></code></pre></figure>
+    <p>При тестировании на отрицающее значение, всегда используйте ключевое слово <code>not</code>, а не проверки на <code>false</code> или <code>null</code>.</p>
+    <figure class="highlight"><pre><code data-lang="scss">
+    <span>// Yep</span><span>@if</span> <span>not</span> <span>index</span><span>(</span><span>$list</span><span>,</span> <span>$item</span><span>)</span> <span>{</span>
+    <span>// …</span><span>}</span><span>// Nope</span><span>@if</span> <span>index</span><span>(</span><span>$list</span><span>,</span> <span>$item</span><span>)</span> <span>==</span> <span>null</span> <span>{</span>
+    <span>// …</span><span>}</span></code></pre></figure>
+    <figure class="highlight"><pre><code data-lang="sass">
+    <span>// Yep</span><span>@if</span> <span>not</span> <span>index</span><span>(</span><span>$list</span><span>,</span> <span>$item</span><span>)</span>
+    <span>// …</span>
+    <span>// Nope</span><span>@if</span> <span>index</span><span>(</span><span>$list</span><span>,</span> <span>$item</span><span>)</span> <span>==</span> <span>null</span>
+    <span>//</span> <span>…</span></code></pre></figure>
+    <p>При использовании условных операторов внутри функции для возврата другого результата, основанного на некоторых условиях, убедитесь, что <code>@return</code> находится вне условных операторов.</p>
+    <figure class="highlight"><pre><code data-lang="scss">
+    <span>// Yep</span><span>@function</span> <span>dummy</span><span>(</span><span>$condition</span><span>)</span> <span>{</span>
+    <span>@if</span> <span>$condition</span> <span>{</span>
+    <span>@return</span> <span>true</span><span>;</span>
+    <span>}</span><span>@return</span> <span>false</span><span>;</span>
+    <span>}</span><span>// Nope</span><span>@function</span> <span>dummy</span><span>(</span><span>$condition</span><span>)</span> <span>{</span>
+    <span>@if</span> <span>$condition</span> <span>{</span>
+    <span>@return</span> <span>true</span><span>;</span>
+    <span>}</span> <span>@else</span> <span>{</span>
+    <span>@return</span> <span>false</span><span>;</span>
+    <span>}</span>
+    <span>}</span></code></pre></figure>
+    <figure class="highlight"><pre><code data-lang="sass">
+    <span>// Yep</span><span>@function</span> <span>dummy</span><span>(</span><span>$condition</span><span>)</span>
+    <span>@if</span> <span>$condition</span>
+    <span>@return</span> <span>true</span><span>@return</span> <span>false</span><span>;</span><span>// Nope</span><span>@function</span> <span>dummy</span><span>(</span><span>$condition</span><span>)</span>
+    <span>@if</span> <span>$condition</span>
+    <span>@return</span> <span>true</span>
+    <span>@else</span>
+    <span>@return</span> <span>false</span></code></pre></figure>
+
+    <h1 id="loops">Циклы</h1>
+    <p>Благодаря предоставленным в Sass комплексным структурам данных, таких, как <a href="#loops">списки</a> и <a href="#maps">карты</a>, не удивляет возможность перебора по этим объектам.</p>
+    <p>Тем не менее, наличие циклов, как правило, подразумевает умеренно сложную логику, что, вероятно, не относится к Sass. Перед использованием цикла убедитесь, что он имеет смысл, и что он на самом деле решает задачу.</p>
+    <h2 id="each">Each</h2>
+    <p>Цикл <code>@each</code>, безусловно, наиболее часто используемый из трёх циклов, предусмотренных Sass. Он предоставляет чистый API для перебора списка или карты.</p>
+    <figure class="highlight"><pre><code data-lang="scss">
+    <span>@each</span> <span>$theme</span> <span>in</span> <span>$themes</span> <span>{</span>
+    <span>.section-</span><span>#{</span><span>$theme</span><span>}</span> <span>{</span>
+    <span>background-color</span><span>:</span> <span>map-get</span><span>(</span><span>$</span><span>,</span> <span>$theme</span><span>);</span>
+    <span>}</span>
+    <span>}</span></code></pre></figure>
+    <figure class="highlight"><pre><code data-lang="sass">
+    <span>@each</span> <span>$theme</span> <span>in</span> <span>$themes</span>
+    <span>.section-</span><span>#{</span><span>$theme</span><span>}</span>
+    <span>background-color</span><span>:</span> <span>map-get</span><span>(</span><span>$colors</span><span>,</span> <span>$theme</span><span>)</span></code></pre></figure>
+    <p>При переборе карты всегда используйте имена переменных <code>$key</code> и <code>$value</code> ради последовательности.</p>
+    <figure class="highlight"><pre><code data-lang="scss">
+    <span>@each</span> <span>$key</span><span>,</span> <span>$value</span> <span>in</span> <span>$map</span> <span>{</span>
+    <span>.section-</span><span>#{</span><span>$key</span><span>}</span> <span>{</span>
+    <span>background-color</span><span>:</span> <span>$value</span><span>;</span>
+    <span>}</span>
+    <span>}</span></code></pre></figure>
+    <figure class="highlight"><pre><code data-lang="sass">
+    <span>@each</span> <span>$key</span><span>,</span> <span>$value</span> <span>in</span> <span>$map</span>
+    <span>.section-</span><span>#{</span><span>$key</span><span>}</span>
+    <span>background-color</span><span>:</span> <span>$value</span></code></pre></figure>
+    <p>Также соблюдайте следующие принципы, чтобы сохранить читаемость:</p>
+    <ul><li>Всегда пустая строка перед <code>@each</code>;</li>
+    <li>Всегда пустая строка после закрывающей скобки (<code>}</code>), если на следующей строке не закрывающая скобка (<code>}</code>).</li></ul>
+    <h2 id="for">For</h2>
+    <p>Цикл <code>@for</code> может быть полезным, когда скомибинирован с псевдоклассом CSS <code>:nth-*</code>. Исключая сценарии, когда предпочтительнее использовать цикл <code>@each</code>, если вам надо пройтись по какому-нибудь объекту.</p>
+    <figure class="highlight"><pre><code data-lang="scss">
+    <span>@for</span> <span>$i</span> <span>from</span> <span>1</span> <span>through</span> <span>10</span> <span>{</span>
+    <span>.foo</span><span>:nth-of-type</span><span>(</span><span>#{</span><span>$i</span><span>}</span><span>)</span> <span>{</span>
+    <span>border-color</span><span>:</span> <span>hsl</span><span>(</span><span>$i</span> <span>*</span> <span>36</span><span>,</span> <span>50%</span><span>,</span> <span>50%</span><span>);</span>
+    <span>}</span>
+    <span>}</span></code></pre></figure>
+    <figure class="highlight"><pre><code data-lang="sass">
+    <span>@for</span> <span>$i</span> <span>from</span> <span>1</span> <span>through</span> <span>10</span>
+    <span>.foo</span><span>:nth-of-type</span><span>(</span><span>#{</span><span>$i</span><span>}</span><span>)</span>
+    <span>border-color</span><span>:</span> <span>hsl</span><span>(</span><span>$i</span> <span>*</span> <span>36</span><span>,</span> <span>50%</span><span>,</span> <span>50%</span><span>)</span></code></pre></figure>
+    <p>Всегда используйте <code>$i</code> как переменную для соблюдения соглашения, пока у вас нет веских причин изменить её, никогда не используйте ключевое слово <code>to</code>, используйте <code>through</code>. Многие разработчики даже и не знают, что Sass предоставляет такие варианты; использование разных может привести к путанице.</p>
+    <p>Также следуйте следующим принципам, чтобы сохранить читаемость:</p>
+    <ul><li>Всегда пустая строка перед <code>@each</code>;</li>
+    <li>Всегда пустая строка после закрывающей скобки (<code>}</code>), если на следующей строке не закрывающая скобка (<code>}</code>).</li></ul>
+    <h2 id="while">While</h2>
+    <p>Цикл <code>@while</code> не имеет абсолютно никакого применения в реальном проекте Sass, особенно из-за того, что нет способа остановить цикл изнутри. <strong>Не используйте его</strong>.</p>
+
+    <h1 id="errorswarnings">Ошибки и предупреждения</h1>
+    <p>Если и есть возможность, которая часто упускается из виду разработчиками, использующих Sass, то это возможность динамически выводить предупреждения и ошибки. Sass поставляется с тремя указаниями для вывода содержимого в стандартной системе вывода (CLI, компилятор…):</p>Обычно любая примесь или функция, за исключением специальных типов или аргументов, может выкинуть ошибку, если произойдёт что-то неожиданное, или вывести предупреждение, когда делает предположение.<ul><li><code>@debug</code>;</li>
+    <li><code>@warn</code>;</li>
+    <li><code>@error</code>.</li></ul>
+    <p><code>@debug</code> нацелен на отладку SassScript. <code>@warn</code> и <code>@error</code>— с виду одинаковые, за исключением того, что один останавливает компилятор, а другой нет.</p>
+    <h2 id="warning">Предупреждения</h2>
+    <p>Возьмём функцию из <a href="https://github.com/sass-mq/sass-mq">Sass-MQ</a>, предполагающую конвертирование из <code>px</code> в <code>em</code>, например:</p>
+    <figure class="highlight"><pre><code data-lang="scss">
+    <span>@function</span> <span>mq-px2em</span><span>(</span><span>$px</span><span>,</span> <span>$base-font-size</span><span>:</span> <span>$mq-base-font-size</span><span>)</span> <span>{</span>
+    <span>@if</span> <span>unitless</span><span>(</span><span>$px</span><span>)</span> <span>{</span>
+    <span>@warn</span> <span>'Предполагаем, что </span><span>#{</span><span>$px</span><span>}</span><span> должно быть в пикселях, пытаемся явно преобразовать.'</span><span>;</span>
+    <span>@return</span> <span>mq-px2em</span><span>(</span><span>$px</span> <span>+</span> <span>0px</span><span>);</span>
+    <span>}</span> <span>@else</span> <span>if</span> <span>unit</span><span>(</span><span>$px</span><span>)</span> <span>==</span> <span>em</span> <span>{</span>
+    <span>@return</span> <span>$px</span><span>;</span>
+    <span>}</span><span>@return</span> <span>(</span><span>$px</span> <span>/</span> <span>$base-font-size</span><span>)</span> <span>*</span> <span>1em</span><span>;</span>
+    <span>}</span></code></pre></figure>
+    <figure class="highlight"><pre><code data-lang="sass">
+    <span>@function</span> <span>mq-px2em</span><span>(</span><span>$px</span><span>,</span> <span>$base-font-size</span><span>:</span> <span>$mq-base-font-size</span><span>)</span>
+    <span>@if</span> <span>unitless</span><span>(</span><span>$px</span><span>)</span>
+    <span>@warn</span> <span>'Предполагаем, что </span><span>#{</span><span>$px</span><span>}</span><span> должно быть в пикселях, пытаемся явно преобразовать.'</span>
+    <span>@return</span> <span>mq-px2em</span><span>(</span><span>$px</span> <span>+</span> <span>0px</span><span>)</span>
+    <span>@else</span> <span>if</span> <span>unit</span><span>(</span><span>$px</span><span>)</span> <span>==</span> <span>em</span>
+    <span>@return</span> <span>$px</span><span>@return</span> <span>(</span><span>$px</span> <span>/</span> <span>$base-font-size</span><span>)</span> <span>*</span> <span>1em</span></code></pre></figure>
+    <p>Если значение отсутствет, то функция предполагает, что значение подразумевает собой измерение в пикселях. С этой точки зрения, предположение может быть рискованным для пользователя и поэтому он должен быть предупреждён, что программа сделает что-то, что может быть неожиданным поведением.</p>
+    <h2 id="errors">Ошибки</h2>
+    <p>Ошибки, в отличие от предупреждений, предотвращают компилятор от дальнейшей работы. Обычно они останавливают сборку и выводят сообщение в поток вывода, также как и в stack trace, что весьма удобно для отладки. Из-за этого ошибки должны быть выведены только тогда, когда уже нет возможности для выполнения программы. Когда есть возможность, попробуйте обойти эту проблему и вывести вместо этого предупреждение.</p>
+    <p>Как пример, давайте скажем, что вы хотите сделать функцию получения для доступа к значениям определенной карты. Вы можете вывести ошибку, если нужный ключ не существует в карте переменных.</p>
+    <figure class="highlight"><pre><code data-lang="scss">
+    <span>/// Карта Z-index’ов, собирает все Z-слои приложения
+    /// @access private
+    /// @type Map
+    /// @prop {String} key - Имя слоя
+    /// @prop {Number} valye - значение Z, соответствующее ключу</span><span>$z-indexes</span><span>:</span> <span>(</span>
+    <span>'modal'</span><span>:</span> <span>5000</span><span>,</span>
+    <span>'dropdown'</span><span>:</span> <span>4000</span><span>,</span>
+    <span>'default'</span><span>:</span> <span>1</span><span>,</span>
+    <span>'below'</span><span>:</span> <span>-1</span><span>,</span>
+    <span>);</span><span>/// Получение значения z-index из имени слоя
+    /// @access public
+    /// @param {String} $layer - Имя слоя
+    /// @return {Number}
+    /// @require $z-indexes</span><span>@function</span> <span>z</span><span>(</span><span>$layer</span><span>)</span> <span>{</span>
+    <span>@if</span> <span>not</span> <span>map-has-key</span><span>(</span><span>$z-indexes</span><span>,</span> <span>$layer</span><span>)</span> <span>{</span>
+    <span>@error</span> <span>'Нет слоя с именем `</span><span>#{</span><span>$layer</span><span>}</span><span>` в $z-indexes. '</span>
+    <span>+</span> <span>'Слой должен быть одним из </span><span>#{</span><span>map-keys</span><span>(</span><span>$z-indexes</span><span>)</span><span>}</span><span>.'</span><span>;</span>
+    <span>}</span><span>@return</span> <span>map-get</span><span>(</span><span>$z-indexes</span><span>,</span> <span>$layer</span><span>);</span>
+    <span>}</span></code></pre></figure>
+    <figure class="highlight"><pre><code data-lang="sass">
+    <span>/// Карта Z-index’ов, собирает все Z-слои приложения
+    /// @access private
+    /// @type Map
+    /// @prop {String} key - Имя слоя
+    /// @prop {Number} valye - значение Z, соответствущее ключу</span><span>$z-indexes</span><span>:</span> <span>(</span><span>'modal'</span><span>:</span> <span>5000</span><span>,</span> <span>'dropdown'</span><span>:</span> <span>4000</span><span>,</span> <span>'default'</span><span>:</span> <span>1</span><span>,</span> <span>'below'</span><span>:</span> <span>-1</span><span>,</span><span>)</span><span>/// Получение значения z-index из имени слоя
+    /// @access public
+    /// @param {String} $layer - Имя слоя
+    /// @return {Number}
+    /// @require $z-indexes</span><span>@function</span> <span>z</span><span>(</span><span>$layer</span><span>)</span>
+    <span>@if</span> <span>not</span> <span>map-has-key</span><span>(</span><span>$z-indexes</span><span>,</span> <span>$layer</span><span>)</span>
+    <span>@error</span> <span>'Нет слоя с именем `</span><span>#{</span><span>$layer</span><span>}</span><span>` в $z-indexes. '</span>
+    <span>+</span> <span>'Слой должен быть одним из </span><span>#{</span><span>map-keys</span><span>(</span><span>$z-indexes</span><span>)</span><span>}</span><span>.'</span><span>;</span><span>@return</span> <span>map-get</span><span>(</span><span>$z-indexes</span><span>,</span> <span>$layer</span><span>)</span></code></pre></figure>
+</div>
+</article>
 	
+<article id="helpers">
+	<header class="article--header">
+		<h1 class="article--title" id="tools">Инструменты</h1>
+</header>
+<div class="text">
+    <h2 id="compass">Compass</h2>
+    <p><a href="http://compass-style.org/">Compass</a> – основной фреймворк Sass, разработанный <a href="https://twitter.com/chriseppstein">Крисом Эппстейном</a>, одним из ключевых разработчиков Sass, и я не вижу веских причин для снижения его популярности в последнее время, если вам интересно моё мнение.</p>
+    <p>Тем не менее, я больше не использую Compass, и главная причина в том, что он сильно замедляет Sass. Ruby Sass сам по себе весьма медленный, так что добавить больше Ruby и больше Sass поверх него не сильно помогает.</p>
+    <p>Дело в том, что мы используем очень малую часть фреймворка. Compass огромен. Кросс-браузерная поддержка – лишь вершина айсберга. Математические функции, помощники изображений, спрайты… Есть ещё много того, что может быть сделанно с этим фреймворком.</p>
+    <p>К сожалению, это всё – сахар, и каких-либо уникальных возможностей в нём нет. Исключение – лишь механизм построения спрайтов, который <em>по-настоящему хорош</em>, но <a href="https://github.com/filamentgroup/grunticon">Grunticon</a> и <a href="http://grumpicon.com/">Grumpicon</a> тоже отлично справляются и более выгодны в том, что могут быть подключенны в процессе сборки.</p>
+    <p>Конечно же, я не отрицаю использование Compass, впрочем, и не рекомендую, тем более, что он не совместим с LibSass (даже если были предприняты усилия для этого). Если вы чувствуете, что вам стоит использовать его, то это достаточно справедливо, но я не думаю, что вы получите много от него в конце дня.</p>
+    <div class="note"><p>Ruby Sass в настоящее время подвергается некоторым выдающимся оптимизациям, которые специально предназначены для тяжёлых стилей со множеством функций и примесей. Они должны резко повысить его производительность до точки, когда Compass и другие фреймворки не будут больше замедлять Sass.</p>
+    </div>
+    <h2 id="section-79">Системы сеток</h2>
+    <p>Отказ от использования системы сеток – не вариант, потому что адаптивный веб-дизайн повсюду. Для того, чтобы дизайн выглядел хорошо на всех размерах, мы используем систему сеток для расположения элементов. Чтобы избежать необходимости писать код этой системы сеток снова и снова, некоторые блестящие умы создали системы сеток многоразового использования.</p>
+    <p>Позвольте сказать прямо: я не большой поклонник систем сеток. Конечно, я вижу их потенциал, но я думаю, что большинство из них полностью излишни и в основном используются для рисования красных столбцов на белом фоне в презентациях дизайнеров. Когда в последний раз вы думали, что <em>слава-Богу-что-я-использовал-этот-инструмент-для-построения-этой-сетки-2-5-3.1-π</em>? Всё верно, никогда. Потому что в большинстве случаев вы просто хотите обычную 12-колоночную сетку и ничего больше.</p>
+    <p>Если вы используете CSS-фреймворк для вашего проекта, такой как <a href="http://getbootstrap.com/">Bootstrap</a> или <a href="http://foundation.zurb.com/">Foundation</a>, скорее всего он включает в себя систему сеток и уже в этом случае я бы рекомендовал использовать именно его, чтобы избежать необходимость иметь дело с ещё одной зависимостью.</p>
+    <p>Если вы не привязаны к особой системе сеток, то вам будет приятно знать, что есть два первоклассных движка модульных сеток для Sass: <a href="http://susy.oddbird.net/">Susy</a> и <a href="http://singularity.gs/">Singularity</a>. Обе делают гораздо больше, чем вам когда-нибудь понадобится, так что вы можете выбрать тот, который вы предпочитаете между этими двумя, и убедитесь, что все ваши крайние случаи – даже самые изящные из них – будут покрыты. Если вы спросите меня, то я отвечу: Susy имеет немного лучшее сообщество, но это лишь моё мнение.</p>
+    <p>Также вы можете использовать что-то немного более непринужденное, как <a href="https://github.com/csswizardry/csswizardry-grids">csswizardry-grids</a></p>
+    <h2 id="scss-lint">SCSS-lint</h2>
+    <p>Проверка качества кода всегда очень важна. Как правило, следующие рекомендации из руководста помогают уменьшить количество ошибок в коде, но никто не совершенен и всегда есть что улучшить. Таким образом можно сказать, что проверка кода так же важна, как и его комментирование.</p>
+    <p><a href="https://github.com/causes/scss-lint">SCSS-lint</a> инструмент для сохранения читаемости и чистоты вашх файлов CSS. Он полностью настраиваемый и легко встраивается в ваш существующий набор инструментов.</p>
+    <p>Для того, чтобы настроить SCSS-lint в соответствии с Sass Guidelines, я рекомендую следующее:</p>
+    <div class="code-block__wrapper"><figure class="highlight"><pre><code class="language-yaml" data-lang="yaml">
+    <span>linters</span><span>:</span><span>BangFormat</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>space_before_bang</span><span>:</span> <span>true</span>
+    <span>space_after_bang</span><span>:</span> <span>false</span><span>BemDepth</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>max_elements</span><span>:</span> <span>1</span><span>BorderZero</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>convention</span><span>:</span> <span>zero</span><span>ChainedClasses</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>ColorKeyword</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>ColorVariable</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>Comment</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>DebugStatement</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>DeclarationOrder</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>DisableLinterReason</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>DuplicateProperty</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>ElsePlacement</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>style</span><span>:</span> <span>same_line</span><span>EmptyLineBetweenBlocks</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>ignore_single_line_blocks</span><span>:</span> <span>true</span><span>EmptyRule</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>ExtendDirective</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>FinalNewline</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>present</span><span>:</span> <span>true</span><span>HexLength</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>style</span><span>:</span> <span>short</span><span>HexNotation</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>style</span><span>:</span> <span>lowercase</span><span>HexValidation</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>IdSelector</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>ImportantRule</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>ImportPath</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>leading_underscore</span><span>:</span> <span>false</span>
+    <span>filename_extension</span><span>:</span> <span>false</span><span>Indentation</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>allow_non_nested_indentation</span><span>:</span> <span>true</span>
+    <span>character</span><span>:</span> <span>space</span>
+    <span>width</span><span>:</span> <span>2</span><span>LeadingZero</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>style</span><span>:</span> <span>include_zero</span><span>MergeableSelector</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span>
+    <span>force_nesting</span><span>:</span> <span>false</span><span>NameFormat</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>convention</span><span>:</span> <span>hyphenated_lowercase</span>
+    <span>allow_leading_underscore</span><span>:</span> <span>true</span><span>NestingDepth</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>max_depth</span><span>:</span> <span>1</span><span>PlaceholderInExtend</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>PrivateNamingConvention</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>prefix</span><span>:</span> <span>_</span><span>PropertyCount</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>PropertySortOrder</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>PropertySpelling</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>extra_properties</span><span>:</span> <span>[]</span><span>PropertyUnits</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>PseudoElement</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>QualifyingElement</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>allow_element_with_attribute</span><span>:</span> <span>false</span>
+    <span>allow_element_with_class</span><span>:</span> <span>false</span>
+    <span>allow_element_with_id</span><span>:</span> <span>false</span><span>SelectorDepth</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>max_depth</span><span>:</span> <span>3</span><span>SelectorFormat</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>convention</span><span>:</span> <span>hyphenated_lowercase</span>
+    <span>class_convention</span><span>:</span> <span>'</span><span>^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][a-zA-Z0-9]*)?$'</span><span>Shorthand</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>SingleLinePerProperty</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>allow_single_line_rule_sets</span><span>:</span> <span>false</span><span>SingleLinePerSelector</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>SpaceAfterComma</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>SpaceAfterPropertyColon</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>style</span><span>:</span> <span>one_space</span><span>SpaceAfterPropertyName</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>SpaceAfterVariableColon</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>style</span><span>:</span> <span>at_least_one_space</span><span>SpaceAfterVariableName</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>SpaceAroundOperator</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>style</span><span>:</span> <span>one_space</span><span>SpaceBeforeBrace</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>style</span><span>:</span> <span>space</span>
+    <span>allow_single_line_padding</span><span>:</span> <span>true</span><span>SpaceBetweenParens</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>spaces</span><span>:</span> <span>0</span><span>StringQuotes</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>style</span><span>:</span> <span>single_quotes</span><span>TrailingSemicolon</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>TrailingZero</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>TransitionAll</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>UnnecessaryMantissa</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>UnnecessaryParentReference</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>UrlFormat</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>UrlQuotes</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span><span>VariableForProperty</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>false</span><span>VendorPrefixes</span><span>:</span>
+    <span>enabled</span><span>:</span> <span>true</span>
+    <span>identifier_list</span><span>:</span> <span>base</span>
+    <span>include</span><span>:</span> <span>[]</span>
+    <span>exclude</span><span>:</span> <span>[]</span><span>ZeroUnit</span><span>:</span><span>enabled</span><span>:</span> <span>true</span></code></pre></figure>
+    <div class="note"><p>Если вы хотите подключить SCSS-lint в процесс сборки Grunt, вам будет приятно знать, что есть расширение Grunt для этого – <a href="https://github.com/ahmednuaman/grunt-scss-lint">grunt-scss-lint</a>.</p>
+    <p>Кроме того, если вы в погоне за приложением, которое работает с SCSS-lint и тому подобным, ребята из <a href="http://thoughtbot.com/">Thoughtbot</a> (Bourbon, Neat…) работают над <a href="https://houndci.com/">Hound</a>.</p>
+    </div>
 
+    <h1 id="section-82">Слишком долго; Не читал</h1>
+    <p>Подводя итог, мы хотим:</p>
+    <ul><li>Отступ двумя (2) пробелами, никаких табов;</li>
+    <li>Строки шириной в 80 символов;</li>
+    <li>Правильно написанный многострочный CSS;</li>
+    <li>Осмысленное использование пробелов;</li>
+    <li>Строки и URL в одиночных кавычках;</li>
+    <li>Не опускать 0, обязательно ставить 0 в начале для чисел меньше 1;</li>
+    <li>Вычисления оборачивать в скобки;</li>
+    <li>Никаких магических чисел;</li>
+    <li>Цвета ключевыми словами &gt; HSL &gt; RGB &gt; шестнадцатеричные;</li>
+    <li>Списки, разделённые запятыми;</li>
+    <li>Без завершающей запятой в списке, если он строчный;</li>
+    <li>Завершающие запятые в картах;</li>
+    <li>Не использовать вложенность селекторов, только для псевдоклассов и псевдоэлементов;</li>
+    <li>Именование через дефис;</li>
+    <li>Подробные комментарии;</li>
+    <li>SassDoc API для комментариев;</li>
+    <li>Ограниченное использование <code>@extend</code>;</li>
+    <li>Простые примеси;</li>
+    <li>Меньше циклов, насколько это возможно, без <code>@while</code>;</li>
+    <li>Уменьшенное число зависимостей;</li>
+    <li>Осмысленное использование ошибок и предупреждений.</li></ul>
+</div>
+</div>
+</article>
 
+<!-- article>(header>h1)+div.text -->
+<!-- article>(header>h1)+div.text -->
+<!-- article>(header>h1)+div.text -->
+<!-- article>(header>h1)+div.text -->
+<!-- article>(header>h1)+div.text -->
+<!-- article>(header>h1)+div.text -->
+<!-- article>(header>h1)+div.text -->
+<!-- article>(header>h1)+div.text -->
+<article id="literature">
+<header class="article--header">
+	<h1 class="article--title">Дополнительно:</h1>
+</header>
+<div class="text">
+<ul>
+<li><a href="https://sass-scss.ru/install">Установить Sass</a></li>
+<li><a href="http://lesscss.org/">LESS</a></li>
+<li><a href="http://learnboost.github.io/stylus/">Stylus</a></li>
+<li><a href="https://cssnext.github.io/">cssnext</a></li>
+<li><a href="https://github.com/postcss/postcss">PostCSS</a></li>
+<li><a href="http://www.indeep76.com/Style/Example007/">Перевод статьи «Каскадные таблицы стилей CSS советы & приемы» &#169; W3C</a></li>
+<!-- <li><a href=""></a></li> -->
+<!-- <li><a href=""></a></li> -->
+<!-- <li><a href=""></a></li> -->
+<!-- <li><a href=""></a></li> -->
 
-
-
-<li><a href="http://www.indeep76.com/Style/Example007/">Перевод статьи «Каскадные таблицы стилей
-CSS советы & приемы» &#169 W3C</a></li>
+</ul>
+</div>
+</article>	
 </body>
 </html>
