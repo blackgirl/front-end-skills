@@ -372,7 +372,8 @@ strong {
     background: rgba(0, 0, 0, 0.1);
     padding: 5px 10px;
     border-radius: 5px;
-    white-space: nowrap; }
+    /*white-space: nowrap; */
+  }
   .text pre {
     margin-bottom: 20px;
     overflow: auto;
@@ -526,6 +527,11 @@ strong {
     color: #fff;
     margin: 0 0 1.5rem;
 }
+.highlight>pre {
+    margin: 0;
+    overflow: auto;
+}
+
 .highlight span {
     color: #7f9f7f;
 }
@@ -539,6 +545,14 @@ code span {
     background-color: #eee;
     border: 1px solid rgba(0,0,0,0.1);
     margin-bottom: 1.5rem;
+    padding: 1.5rem;
+}
+blockquote {
+    background-color: #d2e1dd;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-style: italic;
+    margin: 0 0 1.5rem;
+    overflow: hidden;
     padding: 1.5rem;
 }
 /* Sass */
