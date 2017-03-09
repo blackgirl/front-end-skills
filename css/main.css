@@ -228,6 +228,9 @@ article {
   max-width: 75%;
   margin: 0 auto;
 }
+article:first-of-type {
+    margin-left: 25%;
+}
 
 .article--header {
   margin: 0 0 20px;
