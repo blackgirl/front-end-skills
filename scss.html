@@ -10,7 +10,7 @@
 <div class="content wrapper text">
 <!-- NAVIGATION -->
 <header>
-	<nav id="navigator"><a href="https://blackgirl.github.io/front-end-skills/">&larr;&nbsp;&nbsp;в начало</a></nav>
+	<nav id="navigator"><a href="https://blackgirl.github.io/front-end-skills">в начало</a></nav>
 </header>
 
 <aside>
@@ -73,13 +73,14 @@
 		<li><a href="#mac">Mac</a></li>
 		<li><a href="#installsass">Установка Sass</a></li>
 	</ul></li>
+	<li><a href="#compile">Установка и компиляция SASS</a></li>
 <li>Литература</li>
 </ul>
 </aside>
 
 <article id="about">
 <header class="article--header">
-	<h1 class="article--title">Sass Guidelines&nbsp;<small>(конспект)</small> </h1>
+	<h1 class="article--<small>(конспект)</small> </h1>
 </header>
 	<h2 id="intro">Вступление</h2>
 	<p>Вот так <a href="http://sass-lang.com">Sass</a> описывает сам себя в своей <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">документации</a>:</p>
@@ -1082,21 +1083,87 @@
 	<p>Если вы предпочитаете командную строку нежели приложения, то настройка Sass для работы занимает считанные минуты. Так как Sass зависим от Ruby, а Вы пользователь Mac, поздравляем, Ruby уже предустановлен по-умолчанию.</p>
 	<h2 id="installsass">Установка Sass</h2>
 	<p>Это самый быстрый способ, чтобы начать использовать Sass с помощью командной строки:</p>
-	<ol><li><p><strong>Откройте терминал или командную строку.</strong> На Mac Terminal.app установлен по умолчанию и находится в папке «Программы». В Windows запустите команду `cmd`.</p></li>
-	<li><p><strong>Установка Sass.</strong> Ruby использует gem для управления различными пакетами такими как Sass. В открытом терминале наберите команду:</p>
+	<ol><li><strong>Откройте терминал или командную строку.</strong> На Mac Terminal.app установлен по умолчанию и находится в папке «Программы». В Windows запустите команду `cmd`.</p></li>
+	<li><strong>Установка Sass.</strong> Ruby использует gem для управления различными пакетами такими как Sass. В открытом терминале наберите команду:</p>
 	<figure class="highlight"><pre><code>gem install sass</figure></pre></code>
 	<p>Таким способом можно установить Sass и любые другие пакеты. Это просто магия =). Если у Вас отображается ошибка, в которой говорится
 	о том, что нужно использовать команду <code>sudo</code> для установки
 	пакета Sass, то введите в терминале:</p>
 	<figure class="highlight"><pre><code>sudo gem install sass</figure></pre></code></li>
-	<li><p><strong>Наличие пакета.</strong> Теперь у Вас должен быть
+	<li><strong>Наличие пакета.</strong> Теперь у Вас должен быть
 	установлен пакет Sass, но если хотите Вы можете проверить это.
 	В терминале наберите команду:</p>
 	<figure class="highlight"><pre><code>sass -v</figure></pre></code>
-	<p>В ответ вы должны получить <code>Sass 3.4.22 (Selective Steve)</code>. Поздравляем! Sass успешно установлен.</p>
-	</li></ol>
+	<p>В ответ вы должны получить <code>Sass 3.4.22 (Selective Steve)</code>. Поздравляем! Sass успешно установлен.</li></ol>
 	</article>
-<!-- article>(header.article--header>h1.article--title)+div.text -->
+	<article id="compile">
+	<header class="article--header">
+		<h1 class="article--title">Установка и компиляция SASS</h1>
+	</header>
+	<p>Итак, нам понадобится <a href="http://nodejs.org/" target="_blank">node.js</a>, сборщик проектов <a href="http://gulpjs.com/" target="_blank">gulp</a>, три плагина к нему (<a href="https://www.npmjs.org/package/gulp-watch/" target="_blank">gulp-watch</a>, <a href="https://www.npmjs.org/package/gulp-plumber/" target="_blank">gulp-plumber</a>, <a href="https://www.npmjs.org/package/gulp-sass/" target="_blank">gulp-sass</a>) и какой-нибудь файловый менеджер. В скриншотах я использовал total commander, но поскольку он платный, то могу посоветовать его бесплатный аналог - <a href="http://sourceforge.net/p/doublecmd/wiki/Download/" target="_blank">double commander</a>, он ничуть не хуже и вполне справится с нашими задачами. Если вдруг у вас что-то  не будет получаться, то вы можете скачать <a href="http://sass-lessons.ru/programs/gulp.zip">готовый пример</a>, для его работы нужен только установленный <a href="http://nodejs.org/" target="_blank">node.js</a>. Архив нужно будет распаковать, войти в проект через какой-нибудь файловый менеджер, и в командной строке файлового менеджера сперва набрать <code>"npm install --save-dev"</code>, а потом набрать <code>"npm install gulp -g"</code>. После того как произойдет установка всех модулей в командной строке файлового менеждера нужно будет набрать <code>"gulp"</code>.</p>
+	<p>При верстке я использую <code>"open server"</code>. Навязывать я никому ничего не хочу, но это лучший локальный сервер которым я когда-либо пользовался. Начинал я с denver-а, потом ставил <code>"apache"</code>, потом долго пользовался xamp-ом. По сравнению с ними <code>"open server"</code> лучший. </p>
+	<p>Советую устанавливать плагины в папку где лежат проекты. Обычно у меня проекты для верстки лежат в папке localhost. SCSS - файлы лежат в папке <code>"localhost/название проета/scss"</code>, css-ка генерится по адресу <code>"localhost/название проекта/project/css"</code>. </p>
+	<p>HTML-файлы лежат по адресу <code>"localhost/название проета/project"</code>. Вы можете настраивать пути так как вам удобно, все это я опишу. Для примера я буду просмативать папку "scss" и генерить css-ку в папку "project/css".</p>
+	<ol><li>Для начала идем на <a href="http://nodejs.org/" target="_blank">официальный сайт node.js</a> (<a href="http://sass-lessons.ru/images/instalation/pic1.png">Рис. 1</a>)  и скачиваем его дистрибутив, здесь особо объяснять нечего, я думаю это просто))) После того, как мы его уснановили, стоит проверить работает ли он. Для этого жмем "Win+r", в появившемся окне набираем "node" (<a href="http://sass-lessons.ru/images/instalation/pic2.png">Рис. 2</a>) и жмем "Enter". Если все прошло успешно, то должно появиться вот такое окно (<a href="http://sass-lessons.ru/images/instalation/pic3.png">Рис. 3</a>). Если вы начинающий разработчик, то можете использовать его как калькулятор, хотя node.js это полноценный сервер не хуже чем apache. Если же он не появился, то скорее всего у вас какие-то проблемы с правами. В операционных системах Vista и Windows 7-8 нужно запускать инсталятор с правами администратора.</li>
+	<li>Теперь создайте какую-нибудь папку. В моем архиве она называется gulp, вы можете назвать ее также, или как вам будет угодно. Условно будем называть ее нашим проектом.</li>
+	<li>Теперь поставим сборщик проектов gulp, и некоторые плагины к нему (просмотрите <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started" target="_blank">документацию по gulp</a>, я думаю это будет полезным). В интернете много про это написано, но все авторы описывают это не совсем четко. Установку модулей для node.js осуществляет NPM, я вначале пытался это сделать прямо в node.js, это логично, но не правильно. Естественно у меня ничего не получалось. Итак, закрываем node.js.<br>
+	Из документации следует, что <a href="http://gulpjs.com/" target="_blank">gulp</a> нужно устанавливать сперва глобально, а после локально. Итак, заходим в наш проект через какой-нибудь файловый менеджер (total commander или <a href="http://sourceforge.net/p/doublecmd/wiki/Download/" target="_blank">double commander</a>) и в командной строке файлового менеджера сперва набираем "npm install <nobr>gulp -g"</nobr>, а после набираем "npm install gulp --save-dev" (<a href="http://sass-lessons.ru/images/instalation/pic4.jpg">Рис. 4</a>). Появится окно с установкой, подождем когда установка пройдет и окно пропадет. После установки в нашем проекте появится папка "node_modules". В ней будут лежать все наши плагины, пока в ней лежит только gulp.</li>
+	<li>После установки gulp-а, нам нужно установить три плагина к нему <a href="https://www.npmjs.org/package/gulp-watch/" target="_blank">gulp-watch</a>, <a href="https://www.npmjs.org/package/gulp-plumber/" target="_blank">gulp-plumber</a>, <a href="https://www.npmjs.org/package/gulp-sass/" target="_blank">gulp-sass</a>. Компилировать scss-файлы будет плагин gulp-sass, gulp-plumber необходим для того, чтобы показывать ошибки если вдруг они будут, а они непременно будут (gulp-plumber показывает номер строки с ошибкой, иначе трудно понять что не так), gulp-watch нужен для того, чтобы компиляция происходила автоматически при изменении scss-файлов. Это я ниже подробно опишу.<br>
+	Идем на официальный сайт gulp-а (<a href="http://sass-lessons.ru/images/instalation/pic7.png">Рис. 5</a>), переходим на <a href="http://gulpjs.com/plugins/" target="_blank">страницу с плагинами</a> (<a href="http://sass-lessons.ru/images/instalation/pic8.png">Рис. 6</a>). Эта страница очень удобна, вверху есть поле поиска. В этом поле нужно найти наши плагины, перейти на их страницы. Там будут описаны настройки и процесс установки плагинов.<br>
+	Итак, для того, чтобы установить плагин gulp-sass (<a href="http://sass-lessons.ru/images/instalation/pic9.png">Рис. 7</a>) в наш проект, нужно зайти  в наш проект через какой-нибудь файловый менеджер, ввести в командной строке файлового менеджера "npm install <nobr>gulp-sass --save-dev"</nobr> (<a href="http://sass-lessons.ru/images/instalation/pic10.png">Рис. 8</a>).  Я думаю, что плагины gulp-plumber и gulp-watch вы установите сами, это не трудно.</li>
+	<li>После того, как плагины установлены, нужно создать файл gulpfile.js (<a href="http://sass-lessons.ru/images/instalation/pic12.png">Рис. 9</a>) и написать в нем следующее.
+    <figure class="highlight"><pre><code>
+    // Объявляем наши плагины
+    <span>var</span> <span>gulp</span> = <span>require</span>('<span>gulp</span>');
+    <span>var</span> <span>sass</span> = <span>require</span>('<span>gulp-sass</span>');
+    <span>var</span> <span>plumber</span> = <span>require</span>('<span>gulp-plumber</span>');
+    <span>var</span> <span>watch</span> = <span>require</span>('<span>gulp-watch</span>');
+    // Создаем sass задание
+  	// gulp.src - путь по которому лежит scss-файл который мы будем компилировать
+  	// gulp.dest - путь в который мы будем генерить нашу css-ку
+  	// plumber() - не выбрасывать из компилятора если есть ошибки
+    // errLogToConsole: true - выводить номер строки в которой допущена ошибка
+    <span>gulp</span>.<span>task</span>('<span>sass</span>', function () {
+    <span>gulp</span>.<span>src</span>('<span>scss/main.scss</span>')
+    <span>.</span><span>pipe</span>(<span>plumber</span>())
+    <span>.</span><span>pipe</span>(<span>sass</span>({<span>errLogToConsole: true</span>}))
+    <span>.</span><span>pipe</span>(<span>gulp</span>.<span>dest</span>('<span>project/css</span>'));
+    });
+    <p>Тут все просто, мы полностью просматривает папку в которой лежит scss-файл который мы хотим скомпилировать, и при любом изменении файлов в этой папки запускаем задание sass (gulp.task('sass))</p>
+    <span>gulp</span>.<span>task</span>('<span>default</span>', function() {
+    <span>gulp</span>.<span>run</span>( '<span>sass</span>');
+    <span>gulp</span>.<span>watch</span>('<span>scss/**</span>', function(<span>event</span>) {
+    <span>gulp</span>.<span>run</span>('<span>sass</span>');
+    <span>})</span>
+    })</code></pre></figure>
+
+	<p>Впринципе все, теперь можем проверять. Как видно из файла gulpfile.js, scss-файлы у нас лежат в папке scss, компилируется только файл с именем main.scss. В папке project образно лежит наш проект с html файлами, картинками. В папку project/css мы будем генерить css-ку.</p>
+	<p>В папке scss создадим файл main.scss, код может быть любой. В моем примере код выглядит так.</p>
+	<figure class="highlight"><pre><code>
+		<span>$blue</span>: <span>#3bbfce</span>;
+	<span>$margin</span>: <span>32px</span>;
+	<span>.content-navigation</span> {
+	<span>border-color </span>: <span>$blue</span>;
+	<span>color </span>: <span>darken($blue, 9%)</span>;
+	}
+	<span>.border</span> {
+	<span>padding </span>: <span>$margin / 2</span>;
+	<span>margin </span>: <span>$margin / 2</span>;
+	<span>border-color </span>: <span>$blue</span>;
+	}</code></pre></figure></li>
+	</ol>
+
+	<p>Для того, чтобы его скомпилировать, нужно войти в корень нашего проекта (где лежит gulpfile.js) и в командной строке файлового менеджера написать "gulp" (Должно появиться окно как на <a href="http://sass-lessons.ru/images/instalation/pic13.png">Рис. 10</a>). </p>
+	<p>Если у вас текстовый редактор "sublime text" то вы можете в одной вкладке открыть "main.scss", а в другой "main.css", меняя параметры "main.scss" вы можете видеть как меняется "main.css". Не правда ли здорово))) </p>
+	<p>А теперь давайте проверим, не вылетает ли наш компилятор при наличии ошибок в scss-файле. Для этого заменим переменную "$margin" на "$margins" (<a href="http://sass-lessons.ru/images/instalation/pic14.png" class="colorboxClick cboxElement">Рис. 11</a>), как видим, компилятор показал ошибку в 9 строке, как раз то место, где первый раз встречается наша переменная, все работает.</p>
+
+	<p>А  теперь не много теории. Как правило для уменьшения запросов на сайт, все css-ки компилируются в одну большую. Как это делать на нашем компиляторе? Мы создаем файл main.scss и в нем через <a href="http://sass-lessons.ru/documentation/directive-@import">директиву @import</a> подключаем другие scss-файлы. Наш компилятор так настроен, что он при изменении любого scss-файла лежащего в папке scss компилирует "main.scss". </p>
+	<p>Если проект большой, вы можете подключать таким образом разные стили для разных блоков. Если же проект маленький, то вы можете подключить к примеру "normalize" а стили для сайта писать в другом scss-файле. Нечего "normalize" маячить в основной css-ке. Не стоит на него отвлекаться. </p>
+	<p>В большом проекте можно таким образом разбить css-ку на header, footer, стили для каталога и для внутренних страниц, разные стили для всевозможных слайдеров и тд. На больших проектах это вам пригодится. </p>
+	<p>В unix-ых системах есть такое правило, файлы которые начинаются с подчеркивания не компилируются. </p>
+	<p>Поэтому мой вам совет, те файлы которые подключаются к основному scss-файлу должны начинаться с подчеркивания. Конечно можно этого и не делать, но это стандарт. </p>
+	<p>Если вы в gulpfile.js замените "gulp.src('scss/main.scss')" на "gulp.src('scss/**.scss')", т.е. скажете генерить все scss-файлы лежащие в папке scss, то при создании и изменении файла с расширенем scss, файл с таким же именем, но с расширением css появится в папке css проекта. А теперь попробуйте дописать к scss-файлу нижнее подчеркивание вначале, вы увидите, что этот файл в папку css проекта генериться не будет.</p>
+</article>
 <!-- article>(header.article--header>h1.article--title)+div.text -->
 <!-- article>(header.article--header>h1.article--title)+div.text -->
 
