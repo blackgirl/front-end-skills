@@ -74,7 +74,7 @@
 		<li><a href="#installsass">Установка Sass</a></li>
 	</ul></li>
 	<li><a href="#compile">Установка и компиляция SASS</a></li>
-<li>Литература</li>
+<li><a href="#literature">Литература</a></li>
 </ul>
 </aside>
 
@@ -1074,7 +1074,7 @@
 	</header>
 	<h2 id="linux">Linux</h2>
 	<p>Если Вы используете операционную систему Linux, то в первую очередь Вам необходимо установить Ruby. Установить Ruby можно через пакетные менеджеры apt, rbenv или rvm.</p>
-	<figure class="highlight"><pre><code>sudo su -c "gem install sass"</figure></pre></code>
+	<figure class="highlight"><pre><code>sudo su -c "gem install sass"</code></pre></figure>
 	<h2 id="windows">Windows</h2>
 	<p>Перед тем, как начать пользоваться Sass Вам необходимо установить Ruby.</p>
 	<p>Самый быстрый способ установить Ruby на Windows — это использовать <a href="http://rubyinstaller.org">установщик Ruby</a>. Эта установка в один клик поможет Вам приступить к работе практически мгновенно.</p>
@@ -1085,16 +1085,22 @@
 	<p>Это самый быстрый способ, чтобы начать использовать Sass с помощью командной строки:</p>
 	<ol><li><strong>Откройте терминал или командную строку.</strong> На Mac Terminal.app установлен по умолчанию и находится в папке «Программы». В Windows запустите команду `cmd`.</p></li>
 	<li><strong>Установка Sass.</strong> Ruby использует gem для управления различными пакетами такими как Sass. В открытом терминале наберите команду:</p>
-	<figure class="highlight"><pre><code>gem install sass</figure></pre></code>
+	<figure class="highlight"><pre><code>gem install sass</code></pre></figure>
 	<p>Таким способом можно установить Sass и любые другие пакеты. Это просто магия =). Если у Вас отображается ошибка, в которой говорится
 	о том, что нужно использовать команду <code>sudo</code> для установки
 	пакета Sass, то введите в терминале:</p>
-	<figure class="highlight"><pre><code>sudo gem install sass</figure></pre></code></li>
+	<figure class="highlight"><pre><code>sudo gem install sass</code></pre></figure></li>
 	<li><strong>Наличие пакета.</strong> Теперь у Вас должен быть
 	установлен пакет Sass, но если хотите Вы можете проверить это.
 	В терминале наберите команду:</p>
-	<figure class="highlight"><pre><code>sass -v</figure></pre></code>
+	<figure class="highlight"><pre><code>sass -v</code></pre></figure>
 	<p>В ответ вы должны получить <code>Sass 3.4.22 (Selective Steve)</code>. Поздравляем! Sass успешно установлен.</li></ol>
+	<br>	
+	<p>Затем создадим файлы Sass и CSS с помощью команды touch (на Mac).</p>
+	<figure class="highlight"><pre><code>cd sass-test</code></pre></figure>
+	<figure class="highlight"><pre><code>touch test.scss test.css</code></pre></figure>
+	<p>У инструмента sass есть метод, называемый -watch, здесь мы указываем ему наш файл Sass и на лету компилировать его в CSS. Используйте sass -help, чтобы увидеть все остальные команды доступные в sass.</p>
+	<figure class="highlight"><pre><code>sass --watch test.scss:test.css</code></pre></figure>
 	</article>
 	<article id="compile">
 	<header class="article--header">
@@ -1173,12 +1179,12 @@
 </header>
 <ul><li><a href="https://sass-scss.ru">Документация Sass на русском языке</a></li>
 <li><a href="https://sass-scss.ru/install">Установить Sass</a></li>
+<li><a href="http://www.zingdesign.com/the-sass-and-compass-tutorial-for-absolute-beginners/">The Sass and Compass tutorial for absolute beginners</a></li>
 <li><a href="http://lesscss.org/">LESS</a></li>
 <li><a href="http://learnboost.github.io/stylus/">Stylus</a></li>
 <li><a href="https://cssnext.github.io/">cssnext</a></li>
 <li><a href="https://github.com/postcss/postcss">PostCSS</a></li>
 <li><a href="https://github.com/jlong/sass-bootstrap-defunct/tree/master/lib">Sass Twitter Bootstrap</a></li>
-<!-- <li><a href=""></a></li> -->
 <!-- <li><a href=""></a></li> -->
 <!-- <li><a href=""></a></li> -->
 <li><a href="http://www.indeep76.com/Style/Example007/">Перевод статьи «Каскадные таблицы стилей CSS советы & приемы» &#169; W3C</a></li>

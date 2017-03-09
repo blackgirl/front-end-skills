@@ -228,7 +228,7 @@ article {
   max-width: 75%;
   margin: 0 auto;
 }
-article:first-of-type {
+article {
     margin-left: 25%;
 }
 
@@ -690,7 +690,13 @@ blockquote {
 aside {
   float: left;
   /*margin-right: 15px;*/
-  width: 30%;
+  width: 25%;
+  height: 100%;
+  overflow: scroll;
+  position: fixed;
+}
+aside > ul {
+    padding-bottom: 50px;
 }
 aside header {
   margin: 10px 0; 
