@@ -80,7 +80,7 @@
   <h1 class="article--title">HTML</h1>
 </header>
 
-<h4 name="one">Семантика</h4>
+<h4 id="one">Семантика</h4>
 <p>HTML5 предоставляет нам достаточное количество элементов, направленных на точное семантическое описание документа или содержимого. Поэтому, убедитесь в том, что у вас все хорошо с лексикой.</p>
 </p><br><br>
 <pre><code class="html hljs xml"><span class="hljs-comment">&lt;!-- плохо --&gt;</span>
@@ -122,7 +122,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 </code></pre><br><br>
 
-<h4 name="two">Лаконичность</h4>
+<h4 id="two">Лаконичность</h4>
 <p>Старайтесь кратко писать код. Забудьте о своих старых привычках, перетекающих из XHTML.</p>
 </p><br><br>
 <pre><code class="html hljs xml"><span class="hljs-comment">&lt;!-- плохо --&gt;</span>
@@ -159,7 +159,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre><br><br>
 
-<h4 name="three">Читабельность</h4>
+<h4 id="three">Читабельность</h4>
 <p>Читабельность вашего кода не должна иметь второстепенный характер. Конечно, вы не обязаны быть экспертом по оптимизации (WCAG) для того, чтобы наверняка улучшить свой сайт, однако, уже прямо сейчас вы можете начать немедленно исправлять мелочи, которые в итоге помогут сделать ваш код лучше, например:<br>
 <br>
  — использовать атрибут <i>alt</i> правильно<br>
@@ -174,7 +174,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"My Company, Inc."</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"logo.png"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 </code></pre><br><br>
 
-<h4 name="four">Язык документа</h4>
+<h4 id="four">Язык документа</h4>
 <p>Определении языка и кодировки символов не является обязательным, однако рекомендуется всегда объявлять их на уровне документа, даже если они указаны в заголовках HTTP. Приоритетной кодировкой символов является UTF-8.</p><br><br>
 <pre><code class="html hljs xml"><span class="hljs-comment">&lt;!-- плохо --&gt;</span>
 <span class="hljs-meta">&lt;!doctype html&gt;</span>
@@ -188,7 +188,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre><br><br>
 
-<h4 name="five">Эффективность</h4>
+<h4 id="five">Эффективность</h4>
 <p>Если нет уважительных причин добавлять загрузку скриптов до контента, старайтесь прописывать скрипты в конце документа, тем самым ваши скрипты не будут блокировать рендеринг страницы. Если у вас очень тяжелые таблицы стилей, старайтесь разбить их на несколько и загружать по отдельности, так чтобы первичный контент был сразу отрисован. Очевидно, чем больше файлов, тем больше HTTP запросов, два запроса, конечно, медленнее, чем один, но в нашем случае, важным фактором будет являться скорость отображения нужного контента.</p><br><br>
 <pre><code class="html hljs xml"><span class="hljs-comment">&lt;!-- плохо --&gt;</span>
 <span class="hljs-meta">&lt;!doctype html&gt;</span>
@@ -212,7 +212,7 @@
   <header class="article--header">
   <h1 class="article--title">CSS</h1>
 </header>
-<h4 name="six">Точка с запятой</h4>
+<h4 id="six">Точка с запятой</h4>
 <p>В то время как точка с запятой является чисто технически разделителем правил, CSS всегда относится к точке запятой, как к оператору завершения.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span> {
@@ -225,7 +225,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="seven">Box model</h4>
+<h4 id="seven">Box model</h4>
 <p>Блочная модель, в идеале, должно быть одинаковой для всего документа. Глобальное правило <i>* { box-sizing: border-box; }</i> это нормально, однако нужно помнить, что вы не можете изменить блочную модель у специфичных элементов.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span> {
@@ -240,7 +240,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="eight">Потоки</h4>
+<h4 id="eight">Потоки</h4>
 <p>Не меняйте стандартное поведение элемента, если вы можете обойтись без этого. Сохраняйте элементы в их классическом отображении в потоке документа. Например, удаление пробелов под изображением, не должно влиять на его отображение.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">img</span> {
@@ -267,7 +267,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="night">Позиционирование</h4>
+<h4 id="night">Позиционирование</h4>
 <p>Существует множество способов позиционирования элементов в CSS, однако старайтесь ограничивать себя свойствами представленными ниже. В порядке предпочтения:</p><br><br>
 <pre><code class="css hljs"><span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">block</span>;
 <span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">flex</span>;
@@ -277,7 +277,7 @@
 <span class="hljs-selector-tag">position</span>: <span class="hljs-selector-tag">fixed</span>;
 </code></pre><br><br>
 
-<h4 name="ten">Селекторы</h4>
+<h4 id="ten">Селекторы</h4>
 <p>Минимизируйте сочетания селекторов связанных с DOM. Иногда, лучше добавить лишний класс элементу, который вы хотите найти, чем искать его через три структурных селектора: псевдо-класс, потомок, комбинатор.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:first-of-type</span> <span class="hljs-selector-pseudo">:last-child</span> &gt; <span class="hljs-selector-tag">p</span> ~ *
@@ -298,7 +298,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="eleven">Специфичность</h4>
+<h4 id="eleven">Специфичность</h4>
 <p>Не используйте значения и селекторы, которые нельзя переопределить. Минимизируйте использование <i>id</i> (идентификаторов) и избегайте правило <i>!important</i></p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-class">.bar</span> {
@@ -317,7 +317,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="twelve">Переопределения</h4>
+<h4 id="twelve">Переопределения</h4>
 <p>Переопределение стилей селекторов затрудняет отладку. Избегайте этого, если можете.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">li</span> {
@@ -333,7 +333,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="thriteen">Наследование</h4>
+<h4 id="thriteen">Наследование</h4>
 <p>Не дублируйте определения селекторов, стили которых и так могут передаваться по наследству.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span> <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">div</span> <span class="hljs-selector-tag">p</span> {
@@ -346,7 +346,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="fourteen">Лаконичность</h4>
+<h4 id="fourteen">Лаконичность</h4>
 <p>Пусть ваш код будет немногословным. Старайтесь избегать использование несколько свойств в том месте, где это вовсе не нужно.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span> {
@@ -367,7 +367,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="fifteen">Англоязычные обозначения</h4>
+<h4 id="fifteen">Англоязычные обозначения</h4>
 <p>Предпочтительно использовать английскую математику.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-pseudo">:nth-child(2n</span> + 1) {
@@ -380,7 +380,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="sixteen">Вендорные префиксы</h4>
+<h4 id="sixteen">Вендорные префиксы</h4>
 <p>Не используйте устаревшие префиксы. Если вам действительно необходимо использовать их, в этом случае, добавляйте их перед стандартными.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span> {
@@ -402,7 +402,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="seventeen">Анимация</h4>
+<h4 id="seventeen">Анимация</h4>
 <p>Иногда предпочтительнее использовать переходы (transitions), нежели анимацию (animations). Избегайте анимирование свойств в пользу <i>opacity</i> и <i>transform</i>. </p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:hover</span> {
@@ -421,7 +421,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="eighteen">Единицы измерения</h4>
+<h4 id="eighteen">Единицы измерения</h4>
 <p>Используйте безразмерные значения. Старайтесь использовать <i>rem</i>, если вы рассчитываете все в относительных единицах. Предпочтительно использовать секунды, а не миллисекунды.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span> {
@@ -440,7 +440,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="nineteen">Цветовая модель</h4>
+<h4 id="nineteen">Цветовая модель</h4>
 <p>Если нужна прозрачность, использовать <i>rgba</i>. В противном случае, всегда используйте шестнадцатеричный формат.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span> {
@@ -453,7 +453,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="twenty">Отрисовка</h4>
+<h4 id="twenty">Отрисовка</h4>
 <p>Избегайте http-запросов, если ресурс легко воспроизводится с помощью CSS.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">::before</span> {
@@ -471,7 +471,7 @@
 }
 </code></pre><br><br>
 
-<h4 name="twenty-one">Хаки</h4>
+<h4 id="twenty-one">Хаки</h4>
 <p>Не используйте их.</p><br><br>
 <pre><code class="css hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-selector-tag">div</span> {
@@ -492,7 +492,7 @@
   <h1 class="article--title">JavaScript</h1>
 </header>
 
-<h4 name="twenty-two">Производительность</h4>
+<h4 id="twenty-two">Производительность</h4>
 <p>Легкочитаемый, выразительный и правильный код важнее производительности. На самом деле, JavaScript никогда не будет вашим узким местом в расчете на производительность. Лучше уделять внимание таким вещам, как сжатие изображений, оптимизация http-запросов и доступа к сети, перерасчет DOM-дерева. Если вы запомните хотя бы одну из рекомендаций в данной статье, опирайтесь на нее.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо (хотя и намного быстрее) */</span>
 <span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
@@ -517,7 +517,7 @@
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20arr%20%3D%20%5B1%2C%202%2C%203%2C%204%5D%3B%0Aconst%20len%20%3D%20arr.length%3B%0Avar%20i%20%3D%20-1%3B%0Avar%20result%20%3D%20%5B%5D%3B%0Awhile%20(%2B%2Bi%20%3C%20len)%20%7B%0A%20%20var%20n%20%3D%20arr%5Bi%5D%3B%0A%20%20if%20(n%20%25%202%20%3E%200)%20continue%3B%0A%20%20result.push(n%20*%20n)%3B%20%0A%7D%0A%0A%2F%2F%20result%20%3D%20%5B4%2C%2016%5D%3B%0A">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20arr%20%3D%20%5B1%2C%202%2C%203%2C%204%5D%3B%0Aconst%20isEven%20%3D%20b%20%3D%3E%20(n%20%25%202%20%3D%3D%200)%3B%0Aconst%20square%20%3D%20b%20%3D%3E%20n%20*%20n%3B%0A%0Aconst%20result%20%3D%20arr.filter(isEven).map(square)%3B">хорошо</a><br>
 2. <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions#Cтрелочные_функции">Стрелочные функции</a> и <a href="https://learn.javascript.ru/array-iteration">перебирающие методы массивов</a></p>
 
-<h4 name="twenty-three">Независимость от внешнего состояния</h4>
+<h4 id="twenty-three">Независимость от внешнего состояния</h4>
 <p>Старайтесь создавать свободные функции. Все функции и методы в идеале не должны нести никакого побочного характера, зависеть от внешних данных, и в итоге, они должны возвращать новые объекты, а не вносить изменения в существующие.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">const</span> merge = (target, ...sources) =&gt; <span class="hljs-built_in">Object</span>.assign(target, ...sources);
@@ -533,7 +533,7 @@ merge({ foo: <span class="hljs-string">"foo"</span> }, { bar: <span class="hljs-
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20merge%20%3D%20(target%2C%20...sources)%20%3D%3E%20Object.assign(target%2C%20...sources)%3B%0Amerge(%7B%20foo%3A%20%22foo%22%20%7D%2C%20%7B%20bar%3A%20%22bar%22%20%7D)%3B">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20merge%20%3D%20(...sources)%20%3D%3E%20Object.assign(%7B%7D%2C%20...sources)%3B%0Amerge(%7B%20foo%3A%20%22foo%22%20%7D%2C%20%7B%20bar%3A%20%22bar%22%20%7D)%3B">хорошо</a><br>
 2. <a href="http://frontender.info/es6-in-depth-rest-parameters-and-defaults/#ostatochneparametr">Остаточные параметры</a></p>
 
-<h4 name="twenty-four">Нативность</h4>
+<h4 id="twenty-four">Нативность</h4>
 <p>Полагайтесь на стандартные методы, как можно больше.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">const</span> toArray = obj =&gt; [].slice.call(obj);
@@ -548,7 +548,7 @@ merge({ foo: <span class="hljs-string">"foo"</span> }, { bar: <span class="hljs-
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20toArray%20%3D%20obj%20%3D%3E%20%5B%5D.slice.call(obj)%3B">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20toArray%20%3D%20(()%20%3D%3E%0A%20%20Array.from%20%3F%20Array.from%20%3A%20obj%20%3D%3E%20%5B%5D.slice.call(obj)%0A)()%3B">хорошо</a><br>
 2. <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice#Array-like">Массивоподобные объекты</a></p>
 
-<h4 name="twenty-five">Принудительное сравнение</h4>
+<h4 id="twenty-five">Принудительное сравнение</h4>
 <p>Лишние сравнения не имеют смысл, избегайте их.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">if</span> (x === <span class="hljs-literal">undefined</span> || x === <span class="hljs-literal">null</span>) { <span class="hljs-comment">/* ... */</span>  }
@@ -560,7 +560,7 @@ merge({ foo: <span class="hljs-string">"foo"</span> }, { bar: <span class="hljs-
 <b>К прочтению</b>:<br>
 1. <a href="https://learn.javascript.ru/comparison#сравнение-с-null-и-undefined">Сравнение с null и undefined</a></p>
 
-<h4 name="twenty-six">Циклы</h4>
+<h4 id="twenty-six">Циклы</h4>
 <p>Не используйте циклы, так как они заставляют вас использовать изменяемые объекты. Полагайтесь на методы <i>Array.prototype</i>.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">const</span> sum = arr =&gt; {
@@ -619,7 +619,7 @@ createDivs(<span class="hljs-number">5</span>);
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=%2F*%20%D0%BF%D0%BB%D0%BE%D1%85%D0%BE%20*%2F%0Aconst%20createDivs%20%3D%20howMany%20%3D%3E%20%7B%0A%20%20while%20(howMany--)%20%7B%0A%20%20%20%20document.body.insertAdjacentHTML(%22beforeend%22%2C%20%22%3Cdiv%3E%3C%2Fdiv%3E%22)%3B%0A%20%20%7D%0A%7D%3B%0A%0AcreateDivs(5)%3B">плохо</a> (<a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20createDivs%20%3D%20howMany%20%3D%3E%0A%20%20%5B...Array(howMany)%5D.forEach(()%20%3D%3E%0A%20%20%20%20document.body.insertAdjacentHTML(%22beforeend%22%2C%20%22%3Cdiv%3E%3C%2Fdiv%3E%22)%0A%20%20)%3B%0A%0AcreateDivs(5)%3B">или</a>) vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20createDivs%20%3D%20howMany%20%3D%3E%20%7B%0A%20%20if%20(!howMany)%20return%3B%0A%20%20document.body.insertAdjacentHTML(%22beforeend%22%2C%20%22%3Cdiv%3E%3C%2Fdiv%3E%22)%3B%0A%20%20return%20createDivs(howMany%20-%201)%3B%0A%7D%3B%0A%0AcreateDivs(5)%3B">хорошо</a><br>
 2. <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/insertAdjacentHTML">insertAdjacentHTML() работает быстрее, чем манипуляции с innerHTML()</a></p>
 
-<h4 name="twenty-seven">Аргументы</h4>
+<h4 id="twenty-seven">Аргументы</h4>
 <p>Забудьте об <i>arguments</i> как об объекте. Остаточные параметры это всегда лучший вариант, потому что:<br>
 1. Передаваемое имя дает лучшее представление о том, что ожидает функция на входе<br>
 2. Остаточный параметр — это массив и он легок в использовании</p><br><br>
@@ -635,7 +635,7 @@ createDivs(<span class="hljs-number">5</span>);
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20sortNumbers%20%3D%20()%20%3D%3E%0A%20%20Array.prototype.slice.call(arguments).sort()%3B">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20sortNumbers%20%3D%20(...numbers)%20%3D%3E%20numbers.sort()%3B">хорошо</a><br>
 2. <a href="https://learn.javascript.ru/arguments-pseudoarray#доступ-к-лишним-аргументам">Доступ к аргументам</a></p>
 
-<h4 name="twenty-eight">Использование метода apply</h4>
+<h4 id="twenty-eight">Использование метода apply</h4>
 <p>Забудьте метода apply(). Вместо этого используйте оператор распространения (вызова функции).</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-keyword">const</span> greet = (first, last) =&gt; <span class="hljs-string">`Hi <span class="hljs-subst">${first}</span> <span class="hljs-subst">${last}</span>`</span>;
 <span class="hljs-keyword">const</span> person = [<span class="hljs-string">"John"</span>, <span class="hljs-string">"Doe"</span>];
@@ -651,7 +651,7 @@ greet(...person);
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20greet%20%3D%20(first%2C%20last)%20%3D%3E%20%60Hi%20%24%7Bfirst%7D%20%24%7Blast%7D%60%3B%0Aconst%20person%20%3D%20%5B%22John%22%2C%20%22Doe%22%5D%3B%0A%0A%2F%2F%20%D0%BF%D0%BB%D0%BE%D1%85%D0%BE%0Agreet.apply(null%2C%20person)%3B">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20greet%20%3D%20(first%2C%20last)%20%3D%3E%20%60Hi%20%24%7Bfirst%7D%20%24%7Blast%7D%60%3B%0Aconst%20person%20%3D%20%5B%22John%22%2C%20%22Doe%22%5D%3B%0A%0A%2F%2F%20%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE%0Agreet(...person)%3B">хорошо</a><br>
 2. <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_operator">Оператор распространения</a></p>
 
-<h4 name="twenty-nine">Использование метода bind</h4>
+<h4 id="twenty-nine">Использование метода bind</h4>
 <p>Не используйте bind(), когда есть более идиоматические подходы.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 [<span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>].forEach(func.bind(<span class="hljs-keyword">this</span>));
@@ -686,7 +686,7 @@ greet(...person);
 <p>1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20person%20%3D%20%7B%0A%20%20first%3A%20%22John%22%2C%0A%20%20last%3A%20%22Doe%22%2C%0A%20%20greet()%20%7B%0A%20%20%20%20const%20full%20%3D%20function()%20%7B%0A%20%20%20%20%20%20return%20%60%24%7Bthis.first%7D%20%24%7Bthis.last%7D%60%3B%0A%20%20%20%20%7D.bind(this)%3B%0A%20%20%20%20return%20%60Hello%20%24%7Bfull()%7D%60%3B%0A%20%20%7D%0A%7D">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20person%20%3D%20%7B%0A%20%20first%3A%20%22John%22%2C%0A%20%20last%3A%20%22Doe%22%2C%0A%20%20greet()%20%7B%0A%20%20%20%20const%20full%20%3D%20()%20%3D%3E%20%60%24%7Bthis.first%7D%20%24%7Bthis.last%7D%60%3B%0A%20%20%20%20return%20%60Hello%20%24%7Bfull()%7D%60%3B%0A%20%20%7D%0A%7D">хорошо</a><br>
 2. <a href="https://habrahabr.ru/post/199456/">bind()</a>, а также <a href="http://alljs.ru/articles/array/iterators">итераторы</a> в JavaScript</p>
 
-<h4 name="thirty">Методы высшего порядка</h4>
+<h4 id="thirty">Методы высшего порядка</h4>
 <p>Избегайте вложенных функций там где это не нужно. </p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">const</span> result = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].map(num =&gt; <span class="hljs-built_in">String</span>(num)); <span class="hljs-comment">// =&gt; ["1", "2", "3"]</span>
@@ -699,7 +699,7 @@ greet(...person);
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20result%20%3D%20%5B1%2C%202%2C%203%5D.map(num%20%3D%3E%20String(num))%3B">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20result%20%3D%20%5B1%2C%202%2C%203%5D.map(String)%3B%20">хорошо</a><br>
 2. <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map#Example:_Mapping_an_array_of_numbers_using_a_function_containing_an_argument">Отображение массива чисел с использованием функции</a></p>
 
-<h4 name="thirty-one">Композиции</h4>
+<h4 id="thirty-one">Композиции</h4>
 <p>Избегайте несколько вложенных вызовов функций. Используйте вместо них композицию.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-keyword">const</span> plus1 = a =&gt; a + <span class="hljs-number">1</span>;
 <span class="hljs-keyword">const</span> mult2 = a =&gt; a * <span class="hljs-number">2</span>;
@@ -717,7 +717,7 @@ addThenMult(<span class="hljs-number">5</span>); <span class="hljs-comment">// =
 <b>К прочтению</b>:<br>
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20plus1%20%3D%20a%20%3D%3E%20a%20%2B%201%3B%0Aconst%20mult2%20%3D%20a%20%3D%3E%20a%20*%202%3B%0A%0A%2F*%20%D0%BF%D0%BB%D0%BE%D1%85%D0%BE%20*%2F%0Amult2(plus1(5))%3B%20%2F%2F%20%3D%3E%2012">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20plus1%20%3D%20a%20%3D%3E%20a%20%2B%201%3B%0Aconst%20mult2%20%3D%20a%20%3D%3E%20a%20*%202%3B%0A%0A%2F*%20%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE%20*%2F%0Aconst%20pipeline%20%3D%20(...funcs)%20%3D%3E%20val%20%3D%3E%20funcs.reduce((a%2C%20b)%20%3D%3E%20b(a)%2C%20val)%3B%0Aconst%20addThenMult%20%3D%20pipeline(plus1%2C%20mult2)%3B%0A%0AaddThenMult(5)%3B%20%2F%2F%20%3D%3E%2012">хорошо</a></p>
 
-<h4 name="thirty-two">Кеширование</h4>
+<h4 id="thirty-two">Кеширование</h4>
 <p>Дорогостоящие операции с большими структурами данных непростительны, если вы не кешируете их.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">const</span> contains = (arr, value) =&gt;
@@ -739,7 +739,7 @@ contains([<span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20contains%20%3D%20(arr%2C%20value)%20%3D%3E%0A%20%20Array.prototype.includes%0A%20%20%20%20%3F%20arr.includes(value)%0A%20%20%20%20%3A%20arr.some(el%20%3D%3E%20el%20%3D%3D%3D%20value)%3B%0Acontains(%5B%22foo%22%2C%20%22bar%22%5D%2C%20%22baz%22)%3B%20%2F%2F%20%3D%3E%20false">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20contains%20%3D%20(()%20%3D%3E%0A%20%20Array.prototype.includes%0A%20%20%20%20%3F%20(arr%2C%20value)%20%3D%3E%20arr.includes(value)%0A%20%20%20%20%3A%20(arr%2C%20value)%20%3D%3E%20arr.some(el%20%3D%3E%20el%20%3D%3D%3D%20value)%0A)()%3B%0Acontains(%5B%22foo%22%2C%20%22bar%22%5D%2C%20%22baz%22)%3B%20%2F%2F%20%3D%3E%20false">хорошо</a><br>
 2. Определяем, <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/contains">находится ли одна строка внутри другой</a>, а также <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some#Example:_Testing_size_of_all_array_elements">делаем проверку значений элементов массива</a></p>
 
-<h4 name="thirty-three">Переменные</h4>
+<h4 id="thirty-three">Переменные</h4>
 <p>Используйте <i>const</i> вместо <i>let</i> и <i>let</i> вместо <i>var</i>.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">var</span> me = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
@@ -754,7 +754,7 @@ me.set(<span class="hljs-string">"name"</span>, <span class="hljs-string">"Ben"<
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=var%20me%20%3D%20new%20Map()%3B%0Ame.set(%22name%22%2C%20%22Ben%22).set(%22country%22%2C%20%22Belgium%22)%3B">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20me%20%3D%20new%20Map()%3B%0Ame.set(%22name%22%2C%20%22Ben%22).set(%22country%22%2C%20%22Belgium%22)%3B">хорошо</a><br>
 2. <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const#Examples">Константы</a>, <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let#let_vs_var">оператор let</a>, и немного об <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Map#Использование_объекта_Map">ассоциативном массиве</a></p>
 
-<h4 name="thirty-four">Условия</h4>
+<h4 id="thirty-four">Условия</h4>
 <p>Будьте привержены концепции IIFE's (немедленно выполняемый функтор), используйте возвращаемые значения в условиях (if, else if, else и switch).</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">var</span> grade, result = <span class="hljs-number">50</span>;
@@ -782,7 +782,7 @@ me.set(<span class="hljs-string">"name"</span>, <span class="hljs-string">"Ben"<
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=var%20grade%2C%20result%20%3D%2050%3B%0Aif%20(result%20%3C%2050)%0A%20%20grade%20%3D%20%22bad%22%3B%0Aelse%20if%20(result%20%3C%2090)%0A%20%20grade%20%3D%20%22good%22%3B%0Aelse%0A%20%20grade%20%3D%20%22excellent%22%3B%0A%20%20%0A%2F%2F%20grade%20%3D%20%22good%22%3B">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=let%20result%20%3D%2050%3B%0Aconst%20grade%20%3D%20(()%20%3D%3E%20%7B%0A%20%20if%20(result%20%3C%2050)%0A%20%20%20%20return%20%22bad%22%3B%0A%20%20if%20(result%20%3C%2090)%0A%20%20%20%20return%20%22good%22%3B%0A%20%20return%20%22excellent%22%3B%0A%7D)()%3B%20%2F%2F%20grade%20%3D%20%22good%22%3B">хорошо</a> (<a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=let%20res%20%3D%2050%3B%0Aconst%20grade%20%3D%20((result)%20%3D%3E%20%7B%0A%20%20if%20(result%20%3C%2050)%0A%20%20%20%20return%20%22bad%22%3B%0A%20%20if%20(result%20%3C%2090)%0A%20%20%20%20return%20%22good%22%3B%0A%20%20return%20%22excellent%22%3B%0A%7D)(res)%3B%20%2F%2F%20grade%20%3D%20%22good%22%3B">или</a>)<br>
 2. <a href="http://getinstance.info/articles/javascript/immediately-invoked-function-expressions/">Немедленно вызываемые функции</a></p>
 
-<h4 name="thirty-five">Итераторы</h4>
+<h4 id="thirty-five">Итераторы</h4>
 <p>Избегайте цикл перебора <i>for...in</i></p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-keyword">const</span> shared = { foo: <span class="hljs-string">"foo"</span> };
 <span class="hljs-keyword">const</span> obj = <span class="hljs-built_in">Object</span>.create(shared, {
@@ -808,7 +808,7 @@ me.set(<span class="hljs-string">"name"</span>, <span class="hljs-string">"Ben"<
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20shared%20%3D%20%7B%20foo%3A%20%22foo%22%20%7D%3B%0Aconst%20obj%20%3D%20Object.create(shared%2C%20%7B%0A%20%20bar%3A%20%7B%0A%20%20%20%20value%3A%20%22bar%22%2C%0A%20%20%20%20enumerable%3A%20true%0A%20%20%7D%0A%7D)%3B%0A%0A%2F*%20%D0%BF%D0%BB%D0%BE%D1%85%D0%BE%20*%2F%0Afor%20(var%20prop%20in%20obj)%20%7B%0A%20%20if%20(obj.hasOwnProperty(prop))%0A%20%20%20%20console.log(prop)%3B%0A%7D">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20shared%20%3D%20%7B%20foo%3A%20%22foo%22%20%7D%3B%0Aconst%20obj%20%3D%20Object.create(shared%2C%20%7B%0A%20%20bar%3A%20%7B%0A%20%20%20%20value%3A%20%22bar%22%2C%0A%20%20%20%20enumerable%3A%20true%0A%20%20%7D%0A%7D)%3B%0A%0A%2F*%20%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE%20*%2F%0AObject.keys(obj).forEach(prop%20%3D%3E%20console.log(prop))%3B">хорошо</a><br>
 2. <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty#Example:_Using_hasOwnProperty_to_test_for_a_property.27s_existence">Использование hasOwnProperty для проверки существования свойства</a> и <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/keys#Examples">обход свойств объекта</a></p>
 
-<h4 name="thirty-six">Объект как ассоциативный массив</h4>
+<h4 id="thirty-six">Объект как ассоциативный массив</h4>
 <p>В то время как объекты можно законно использовать, как правило, ассоциативный массив (<i>Map</i>) лучше и мощнее. Если сомневаетесь, тогда точно используйте <i>Map</i>.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">const</span> me = {
@@ -834,7 +834,7 @@ me.size; <span class="hljs-comment">// =&gt; 3</span>
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20me%20%3D%20%7B%0A%20%20name%3A%20%22Ben%22%2C%0A%20%20age%3A%2030%0A%7D%3B%0A%0A%2F%2F%20me%20%3D%201%3B%20%2F%2F%20error!%20%D1%82%D0%B0%D0%BA%20%D0%BA%D0%B0%D0%BA%20%D0%BD%D0%B5%D0%BB%D1%8C%D0%B7%D1%8F%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BA%D1%81%D1%82%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D1%8B%0A%2F%2F%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D1%8F%D1%82%D1%8C%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%20%D0%B8%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C%20%D0%B8%D1%85%0A%0Avar%20meSize%20%3D%20Object.keys(me).length%3B%0AmeSize%3B%20%2F%2F%20%3D%3E%202%0Ame.country%20%3D%20%22Belgium%22%3B%0AmeSize%2B%2B%3B%0AmeSize%3B%20%2F%2F%20%3D%3E%203">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20me%20%3D%20new%20Map()%3B%0Ame.set(%22name%22%2C%20%22Ben%22)%3B%0Ame.set(%22age%22%2C%2030)%3B%0Ame.size%3B%20%2F%2F%20%3D%3E%202%0Ame.set(%22country%22%2C%20%22Belgium%22)%3B%0Ame.size%3B%20%2F%2F%20%3D%3E%203">хорошо</a><br>
 2. <a href="https://learn.javascript.ru/set-map#map">Коллекция для хранения записей вида ключ: значение</a></p>
 
-<h4 name="thirty-seven">Каррирование</h4>
+<h4 id="thirty-seven">Каррирование</h4>
 <p>Каррирование является мощной, но в свою очередь чужеродной парадигмой для многих разработчиков. Не злоупотребляйте.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">const</span> sum = a =&gt; b =&gt; a + b;
@@ -849,7 +849,7 @@ sum(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>); <sp
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20sum%20%3D%20a%20%3D%3E%20b%20%3D%3E%20a%20%2B%20b%3B%0Asum(5)(3)%3B%20%2F%2F%20%3D%3E%208">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20sum%20%3D%20(a%2C%20b)%20%3D%3E%20a%20%2B%20b%3B%0Asum(5%2C%203)%3B%20%2F%2F%20%3D%3E%208">хорошо</a><br>
 2. <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Каррирование</a> и <a href="http://true-coder.ru/javascript/karrirovanie-karring-v-javascript.html">примеры</a></p>
 
-<h4 name="thirty-eight">Читабельность</h4>
+<h4 id="thirty-eight">Читабельность</h4>
 <p>Не скрывайте намерения вашего кода, используя умные трюки.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 foo || doSomething();
@@ -873,7 +873,7 @@ foo || doSomething();
 <b>К прочтению</b>:<br>
 1. <a href="https://habrahabr.ru/post/167877/">Об идеальном коде и суровой реальности</a></p>
 
-<h4 name="thirty-nine">Повторное использование кода</h4>
+<h4 id="thirty-nine">Повторное использование кода</h4>
 <p>Не бойтесь создавать много мелких и многоразовых функций, они очень полезны.</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">let</span> last = arr[arr.length - <span class="hljs-number">1</span>];
@@ -894,7 +894,7 @@ foo || doSomething();
 <b>К прочтению</b>:<br>
 1. Babeljs (пример в ES5): <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=let%20last%20%3D%20arr%5Barr.length%20-%201%5D%3B%20%2F*%20%D0%BF%D0%BB%D0%BE%D1%85%D0%BE%20*%2F%0A%0A%2F*%20%D0%BF%D0%BB%D0%BE%D1%85%D0%BE%20*%2F%0Aconst%20product%20%3D%20(a%2C%20b)%20%3D%3E%20a%20*%20b%3B%0Aconst%20triple%20%3D%20n%20%3D%3E%20n%20*%203%3B">плохо</a> vs <a href="https://babeljs.io/repl/#?experimental=false&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=const%20first%20%3D%20arr%20%3D%3E%20arr%5B0%5D%3B%20%2F%2F%20%3D%3E%20first(arr)%3B%0Aconst%20last%20%3D%20arr%20%3D%3E%20first(arr.slice(-1))%3B%20%2F%2F%20%3D%3E%20last(arr)%3B%0A%0A%2F*%20%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE%20*%2F%0Aconst%20product%20%3D%20(a%2C%20b)%20%3D%3E%20a%20*%20b%3B%0Aconst%20triple%20%3D%20product.bind(null%2C%203)%3B">хорошо</a></p>
 
-<h4 name="forty">Зависимости</h4>
+<h4 id="forty">Зависимости</h4>
 <p>Минимизируйте зависимости стороннего кода, если вы не в курсе как он работает. Не нужно загружать всю библиотеку ради нескольких методов, которые легко воспроизводимы:</p><br><br>
 <pre><code class="javascript hljs"><span class="hljs-comment">/* плохо */</span>
 <span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">"underscore"</span>);
