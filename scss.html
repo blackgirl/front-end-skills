@@ -15,58 +15,66 @@
 
 <aside>
 <header><strong>Содержание</strong></header>
-<!-- <br> -->
-<ul><li><a href="#">Sass Guidelines&nbsp;(конспект)</a>
-	<ul><li><a href="#">Вступление</a></li>
-	<li><a href="#">Sass или SCSS</a></li>
-	<li><a href="#">Другие препроцессоры</a></li></ul></li>
-<li><a href="#">Соглашения по именованию</a>
-	<ul><li><a href="#">Константы</a></li>
-	<li><a href="#">Пространство имён</a></li></ul></li>
-<li><a href="#">Комментирование</a>
-	<ul><li><a href="#">Написание комментариев</a></li>
-	<li><a href="#">Документирование</a></li></ul></li>
-<li><a href="#">Архитектура</a>
-	<ul><li><a href="#">Компоненты</a></li>
-	<li><a href="#">Шаблон 7-1</a>
-		<ul><li><a href="#">Папка Base</a></li>
-		<li><a href="#">Папка Layout</a></li>
-		<li><a href="#">Папка Components</a></li>
-		<li><a href="#">Папка Pages</a></li>
-		<li><a href="#">Папка Themes</a></li>
-		<li><a href="#">Папка Utils</a></li>
-		<li><a href="#">Папка Vendors</a></li>
-		<li><a href="#">Файл Main</a></li></ul></a></li>
-	<li><a href="#">Файл позора</a></li></ul></li>
-<li><a href="#">Переменные</a>
-	<ul><li><a href="#">Области видимости</a></li>
-	<li><a href="#">Флаг !default</a></li>
-	<li><a href="#">Флаг !global</a></li>
-	<li><a href="#">Много переменных или карты</a></li>
-	<li><a href="#">Примеси</a>
-		<ul><li><a href="#">Основы</a></li>
-		<li><a href="#">Список аргументов</a></li>
-		<li><a href="#">Примеси и вендорные префиксы</a></li></ul></a></li>
-	<li><a href="#">Условные операторы</a></li>
-	<li><a href="#">Циклы</a>
-		<ul><li><a href="#">Each</a></li>
-		<li><a href="#">For</a></li>
-		<li><a href="#">While</a></li></ul></a></li>
-	<li><a href="#">Ошибки и предупреждения</a>
-		<ul><li><a href="#">Предупреждения</a></li>
-		<li><a href="#">Ошибки</a></li></ul></a></li>
+<ul><li><a href="#intro">Вступление</a>
+	<ul><li><a href="#sass--scss">Sass или SCSS</a></li>
+		<li><a href="#otherprepro">Другие препроцессоры</a></li>
 	</ul></li>
-<li><a href="#">Инструменты</a>
-	<ul><li><a href="#">Compass</a></li>
-	<li><a href="#">Системы сеток</a></li>
-	<li><a href="#">SCSS-lint</a></li></ul></li>
-<li><a href="#">Также</a></li>
-<li><a href="#">Hачать использовать Sass из командной строки</a>
-	<ul><li><a href="#">Linux</a></li>
-	<li><a href="#">Windows</a></li>
-	<li><a href="#">Mac</a></li>
-	<li><a href="#">Установка Sass</a></li></ul></li>
-<li><a href="#">Дополнительно:</a></li></ul>
+<li><a href="#naming">Соглашения по именованию</a>
+	<ul><li><a href="#const">Константы</a></li>
+		<li><a href="#namescope">Пространство имён</a></li>
+	</ul></li>
+<li><a href="#comments">Комментирование</a>
+	<ul><li><a href="#whritecomments">Написание комментариев</a></li>
+		<li><a href="#sassdocs">Документирование</a></li>
+	</ul></li>
+<li><a href="#architecture">Архитектура</a>
+	<ul><li><a href="#components">Компоненты</a></li>
+	<li><a href="#sevenone">Шаблон 7-1</a>
+		<ul><li><a href="#base">Папка Base</a></li>
+			<li><a href="#layout">Папка Layout</a></li>
+			<li><a href="#components">Папка Components</a></li>
+			<li><a href="#pages">Папка Pages</a></li>
+			<li><a href="#themes">Папка Themes</a></li>
+			<li><a href="#utils">Папка Utils</a></li>
+			<li><a href="#vendors">Папка Vendors</a></li>
+			<li><a href="#main">Файл Main</a></li>
+		</ul></li>
+		<li><a href="#shamefile">Файл позора</a></li>
+	</ul></li>
+<li><a href="#variables">Переменные</a>
+	<ul><li><a href="#scopes">Области видимости</a></li>
+		<li><a href="#default">Флаг <code>!default</code></a></li>
+		<li><a href="#global">Флаг <code>!global</code></a></li>
+		<li><a href="#maps">Много переменных или карты</a></li>
+	</ul></li>
+<li><a href="#mixins">Примеси</a>
+	<ul><li><a href="#mixinsbasic">Основы</a></li>
+		<li><a href="#arglist">Список аргументов</a></li>
+		<li><a href="#prefix">Примеси и вендорные префиксы</a></li>
+	</ul></li>
+<li><a href="#ifelse">Условные операторы</a></li>
+<li><a href="#loops">Циклы</a>
+	<ul><li><a href="#each">Each</a></li>
+		<li><a href="#for">For</a></li>
+		<li><a href="#while">While</a></li>
+	</ul></li>
+<li><a href="#errorswarnings">Ошибки и предупреждения</a>
+	<ul><li><a href="#warning">Предупреждения</a></li>
+		<li><a href="#errors">Ошибки</a></li>
+	</ul></li>
+<li><a href="#tools">Инструменты</a>
+	<ul><li><a href="#compass">Compass</a></li>
+		<li><a href="#section-79">Системы сеток</a></li>
+		<li><a href="#scss-lint">SCSS-lint</a></li>
+	</ul></li>
+<li><a href="#install">Hачать использовать Sass из командной строки</a>
+	<ul><li><a href="#linux">Linux</a></li>
+		<li><a href="#windows">Windows</a></li>
+		<li><a href="#mac">Mac</a></li>
+		<li><a href="#installsass">Установка Sass</a></li>
+	</ul></li>
+<li>Литература</li>
+</ul>
 </aside>
 
 <article id="about">
@@ -1059,8 +1067,7 @@
     <li>Осмысленное использование ошибок и предупреждений.</li></ul>
 </article>
 
-<article>
-
+<article id="install">
 	<header class="article--header">
 		<h1 class="article--title">Hачать использовать Sass из командной строки</h1>
 	</header>
@@ -1095,7 +1102,7 @@
 
 <article id="literature">
 <header class="article--header">
-	<h1 class="article--title">Дополнительно:</h1>
+	<h1 class="article--title">Литература:</h1>
 </header>
 <ul><li><a href="https://sass-scss.ru">Документация Sass на русском языке</a></li>
 <li><a href="https://sass-scss.ru/install">Установить Sass</a></li>
