@@ -715,7 +715,18 @@ nav li {
   font-size: 16px;
 }
 
-
-
-
-
+/* SELECTORS (:nth-child)*/
+.selectors img {
+  display: block;
+  width: 700; 
+  height: 130;
+}
+.selectors .red {
+    color: #ef6155;
+}
+.selectors .green {
+    color: #48b685;
+}
+.selectors .yellow {
+    color: #fec418;
+}
